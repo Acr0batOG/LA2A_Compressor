@@ -1,0 +1,18 @@
+{
+  "OutputFoldersPerTargetSystem": {
+    "Local Machine": [
+      "out\\build\\x64-Debug",
+      "out\\install\\x64-Debug"
+    ]
+  },
+  "ExpandedNodes": [
+    "",
+    "\\build",
+    "\\build\\vst3sdk",
+    "\\build\\vst3sdk\\public.sdk\\samples",
+    "\\build\\vst3sdk\\public.sdk\\samples\\vst-utilities",
+    "\\build\\vst3sdk\\public.sdk\\samples\\vst-utilities\\moduleinfotool"
+  ],
+  "SelectedNode": "\\build\\vst3sdk\\public.sdk",
+  "PreviewInSolutionExplorer": false
+}

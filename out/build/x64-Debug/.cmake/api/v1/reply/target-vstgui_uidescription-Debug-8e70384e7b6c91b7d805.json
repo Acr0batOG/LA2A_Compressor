@@ -1,0 +1,1653 @@
+{
+	"archive" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "/machine:x64 /IGNORE:4221",
+				"role" : "flags"
+			}
+		]
+	},
+	"artifacts" : 
+	[
+		{
+			"path" : "lib/vstgui_uidescription.lib"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"add_dependencies",
+			"add_compile_options",
+			"smtg_setup_platform_toolset",
+			"target_compile_definitions",
+			"add_definitions",
+			"target_precompile_headers",
+			"target_compile_features",
+			"vstgui_set_cxx_version"
+		],
+		"files" : 
+		[
+			"C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/CMakeLists.txt",
+			"C:/Users/RSmith/VST3/VST_SDK/vst3sdk/cmake/modules/SMTG_PlatformToolset.cmake",
+			"C:/Users/RSmith/VST3/VST_SDK/vst3sdk/CMakeLists.txt",
+			"C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 184,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 186,
+				"parent" : 0
+			},
+			{
+				"file" : 2
+			},
+			{
+				"command" : 3,
+				"file" : 2,
+				"line" : 32,
+				"parent" : 3
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 11,
+				"parent" : 4
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 78,
+				"parent" : 4
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 79,
+				"parent" : 4
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 80,
+				"parent" : 4
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 87,
+				"parent" : 4
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 88,
+				"parent" : 4
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 89,
+				"parent" : 4
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 90,
+				"parent" : 4
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 91,
+				"parent" : 4
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 92,
+				"parent" : 4
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 93,
+				"parent" : 4
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 94,
+				"parent" : 4
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 111,
+				"parent" : 4
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 118,
+				"parent" : 4
+			},
+			{
+				"command" : 4,
+				"file" : 0,
+				"line" : 188,
+				"parent" : 0
+			},
+			{
+				"command" : 5,
+				"file" : 1,
+				"line" : 76,
+				"parent" : 4
+			},
+			{
+				"command" : 6,
+				"file" : 0,
+				"line" : 187,
+				"parent" : 0
+			},
+			{
+				"command" : 8,
+				"file" : 0,
+				"line" : 189,
+				"parent" : 0
+			},
+			{
+				"command" : 7,
+				"file" : 3,
+				"line" : 16,
+				"parent" : 22
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MP /Zi /utf-8 /Zc:__cplusplus /permissive- /MDd /Zi /Ob0 /Od /RTC1 -std:c++17"
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "-DSMTG_RENAME_ASSERT=1"
+				},
+				{
+					"backtrace" : 6,
+					"fragment" : "/W3"
+				},
+				{
+					"backtrace" : 7,
+					"fragment" : "/Zc:__cplusplus"
+				},
+				{
+					"backtrace" : 8,
+					"fragment" : "/fp:fast"
+				},
+				{
+					"backtrace" : 9,
+					"fragment" : "/MP"
+				},
+				{
+					"backtrace" : 10,
+					"fragment" : "/wd6031"
+				},
+				{
+					"backtrace" : 11,
+					"fragment" : "/wd6308"
+				},
+				{
+					"backtrace" : 12,
+					"fragment" : "/wd6330"
+				},
+				{
+					"backtrace" : 13,
+					"fragment" : "/wd6385"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "/wd6386"
+				},
+				{
+					"backtrace" : 15,
+					"fragment" : "/wd28125"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "/wd28251"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "/ZI"
+				},
+				{
+					"backtrace" : 18,
+					"fragment" : "/MDd"
+				},
+				{
+					"fragment" : "/YcC:/Users/RSmith/VST_Outputs/LA2A_Compressor/out/build/x64-Debug/vst3sdk/VSTGUI.build/vstgui/uidescription/CMakeFiles/vstgui_uidescription.dir/cmake_pch.hxx /FpC:/Users/RSmith/VST_Outputs/LA2A_Compressor/out/build/x64-Debug/vst3sdk/VSTGUI.build/vstgui/uidescription/CMakeFiles/vstgui_uidescription.dir/./cmake_pch.cxx.pch /FIC:/Users/RSmith/VST_Outputs/LA2A_Compressor/out/build/x64-Debug/vst3sdk/VSTGUI.build/vstgui/uidescription/CMakeFiles/vstgui_uidescription.dir/cmake_pch.hxx"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 19,
+					"define" : "DEBUG"
+				},
+				{
+					"backtrace" : 19,
+					"define" : "VSTGUI_ENABLE_DEPRECATED_METHODS=1"
+				},
+				{
+					"backtrace" : 19,
+					"define" : "VSTGUI_ENABLE_XML_PARSER=1"
+				},
+				{
+					"backtrace" : 19,
+					"define" : "VSTGUI_LIVE_EDITING"
+				},
+				{
+					"backtrace" : 19,
+					"define" : "VSTGUI_OPENGL_SUPPORT=1"
+				},
+				{
+					"backtrace" : 19,
+					"define" : "_CRT_SECURE_NO_WARNINGS"
+				},
+				{
+					"backtrace" : 20,
+					"define" : "_UNICODE"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					23
+				],
+				"standard" : "17"
+			},
+			"precompileHeaders" : 
+			[
+				{
+					"backtrace" : 21,
+					"header" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/icontroller.h"
+				},
+				{
+					"backtrace" : 21,
+					"header" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/uiattributes.h"
+				},
+				{
+					"backtrace" : 21,
+					"header" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/iviewcreator.h"
+				},
+				{
+					"backtrace" : 21,
+					"header" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/uidescription.h"
+				}
+			],
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MP /Zi /utf-8 /Zc:__cplusplus /permissive- /MDd /Zi /Ob0 /Od /RTC1 -std:c++17"
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "-DSMTG_RENAME_ASSERT=1"
+				},
+				{
+					"backtrace" : 6,
+					"fragment" : "/W3"
+				},
+				{
+					"backtrace" : 7,
+					"fragment" : "/Zc:__cplusplus"
+				},
+				{
+					"backtrace" : 8,
+					"fragment" : "/fp:fast"
+				},
+				{
+					"backtrace" : 9,
+					"fragment" : "/MP"
+				},
+				{
+					"backtrace" : 10,
+					"fragment" : "/wd6031"
+				},
+				{
+					"backtrace" : 11,
+					"fragment" : "/wd6308"
+				},
+				{
+					"backtrace" : 12,
+					"fragment" : "/wd6330"
+				},
+				{
+					"backtrace" : 13,
+					"fragment" : "/wd6385"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "/wd6386"
+				},
+				{
+					"backtrace" : 15,
+					"fragment" : "/wd28125"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "/wd28251"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "/ZI"
+				},
+				{
+					"backtrace" : 18,
+					"fragment" : "/MDd"
+				},
+				{
+					"fragment" : "/YuC:/Users/RSmith/VST_Outputs/LA2A_Compressor/out/build/x64-Debug/vst3sdk/VSTGUI.build/vstgui/uidescription/CMakeFiles/vstgui_uidescription.dir/cmake_pch.hxx /FpC:/Users/RSmith/VST_Outputs/LA2A_Compressor/out/build/x64-Debug/vst3sdk/VSTGUI.build/vstgui/uidescription/CMakeFiles/vstgui_uidescription.dir/./cmake_pch.cxx.pch /FIC:/Users/RSmith/VST_Outputs/LA2A_Compressor/out/build/x64-Debug/vst3sdk/VSTGUI.build/vstgui/uidescription/CMakeFiles/vstgui_uidescription.dir/cmake_pch.hxx"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 19,
+					"define" : "DEBUG"
+				},
+				{
+					"backtrace" : 19,
+					"define" : "VSTGUI_ENABLE_DEPRECATED_METHODS=1"
+				},
+				{
+					"backtrace" : 19,
+					"define" : "VSTGUI_ENABLE_XML_PARSER=1"
+				},
+				{
+					"backtrace" : 19,
+					"define" : "VSTGUI_LIVE_EDITING"
+				},
+				{
+					"backtrace" : 19,
+					"define" : "VSTGUI_OPENGL_SUPPORT=1"
+				},
+				{
+					"backtrace" : 19,
+					"define" : "_CRT_SECURE_NO_WARNINGS"
+				},
+				{
+					"backtrace" : 20,
+					"define" : "_UNICODE"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					23
+				],
+				"standard" : "17"
+			},
+			"precompileHeaders" : 
+			[
+				{
+					"backtrace" : 21,
+					"header" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/icontroller.h"
+				},
+				{
+					"backtrace" : 21,
+					"header" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/uiattributes.h"
+				},
+				{
+					"backtrace" : 21,
+					"header" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/iviewcreator.h"
+				},
+				{
+					"backtrace" : 21,
+					"header" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/uidescription.h"
+				}
+			],
+			"sourceIndexes" : 
+			[
+				2,
+				4,
+				6,
+				16,
+				18,
+				20,
+				22,
+				26,
+				28,
+				30,
+				32,
+				37,
+				39,
+				41,
+				44,
+				49,
+				51,
+				54,
+				56,
+				58,
+				60,
+				62,
+				64,
+				67,
+				69,
+				71,
+				73,
+				75,
+				77,
+				79,
+				82,
+				84,
+				86,
+				88,
+				90,
+				92,
+				94,
+				96,
+				98,
+				100,
+				102,
+				104,
+				106,
+				108,
+				110,
+				112,
+				114,
+				116,
+				118,
+				120,
+				122,
+				124,
+				126,
+				128,
+				130,
+				132,
+				134,
+				136,
+				138,
+				140,
+				142,
+				144,
+				146,
+				148,
+				150,
+				152,
+				154,
+				156,
+				158,
+				160,
+				162,
+				164
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 2,
+			"id" : "vstgui::@54a0746fa10a39fdb5d0"
+		}
+	],
+	"folder" : 
+	{
+		"name" : "Libraries"
+	},
+	"id" : "vstgui_uidescription::@119a8cbf1440fab7ca2b",
+	"name" : "vstgui_uidescription",
+	"nameOnDisk" : "vstgui_uidescription.lib",
+	"paths" : 
+	{
+		"build" : "vst3sdk/VSTGUI.build/vstgui/uidescription",
+		"source" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17,
+				18,
+				19,
+				20,
+				21,
+				22,
+				23,
+				24,
+				25,
+				26,
+				27,
+				28,
+				29,
+				30,
+				31,
+				32,
+				33
+			]
+		},
+		{
+			"name" : "detail",
+			"sourceIndexes" : 
+			[
+				34,
+				35,
+				36,
+				37,
+				38,
+				39,
+				40,
+				41,
+				42,
+				43,
+				44,
+				45
+			]
+		},
+		{
+			"name" : "editing",
+			"sourceIndexes" : 
+			[
+				46,
+				47,
+				48,
+				49,
+				50,
+				51,
+				52,
+				53,
+				54,
+				55,
+				56,
+				57,
+				58,
+				59,
+				60,
+				61,
+				62,
+				63,
+				64,
+				65,
+				66,
+				67,
+				68,
+				69,
+				70,
+				71,
+				72,
+				73,
+				74,
+				75,
+				76,
+				77,
+				78,
+				79,
+				80,
+				81,
+				82,
+				83,
+				84,
+				85,
+				86,
+				87,
+				88,
+				89,
+				90,
+				91,
+				92,
+				93,
+				94,
+				95,
+				96,
+				97
+			]
+		},
+		{
+			"name" : "viewcreator",
+			"sourceIndexes" : 
+			[
+				98,
+				99,
+				100,
+				101,
+				102,
+				103,
+				104,
+				105,
+				106,
+				107,
+				108,
+				109,
+				110,
+				111,
+				112,
+				113,
+				114,
+				115,
+				116,
+				117,
+				118,
+				119,
+				120,
+				121,
+				122,
+				123,
+				124,
+				125,
+				126,
+				127,
+				128,
+				129,
+				130,
+				131,
+				132,
+				133,
+				134,
+				135,
+				136,
+				137,
+				138,
+				139,
+				140,
+				141,
+				142,
+				143,
+				144,
+				145,
+				146,
+				147,
+				148,
+				149,
+				150,
+				151,
+				152,
+				153,
+				154,
+				155,
+				156,
+				157,
+				158,
+				159,
+				160,
+				161,
+				162,
+				163,
+				164,
+				165
+			]
+		},
+		{
+			"name" : "Precompile Header File",
+			"sourceIndexes" : 
+			[
+				166
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 0,
+			"compileGroupIndex" : 0,
+			"path" : "out/build/x64-Debug/vst3sdk/VSTGUI.build/vstgui/uidescription/CMakeFiles/vstgui_uidescription.dir/cmake_pch.cxx",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/base64codec.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/compresseduidescription.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/compresseduidescription.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/cstream.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/cstream.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/cstream_zlib.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/cstream_zlib.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/delegationcontroller.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/doc.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/icontentprovider.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/icontroller.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/iuidescription.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/iuidescriptionaddon.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/iviewcreator.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/iviewfactory.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/uiattributes.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/uiattributes.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/uicontentprovider.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/uicontentprovider.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/uidescription.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/uidescription.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/uidescriptionaddonregistry.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/uidescriptionaddonregistry.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/uidescriptionlistener.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/uidescriptionfwd.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/uiviewcreator.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/uiviewcreator.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/uiviewfactory.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/uiviewfactory.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/uiviewswitchcontainer.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/uiviewswitchcontainer.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/xmlparser.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/xmlparser.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/detail/locale.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/detail/parsecolor.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/detail/scalefactorutils.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/detail/uidesclist.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/detail/uidesclist.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/detail/uijsonpersistence.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/detail/uijsonpersistence.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/detail/uinode.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/detail/uinode.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/detail/uiviewcreatorattributes.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/detail/uixmlpersistence.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/detail/uixmlpersistence.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/doc.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/iaction.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/igridprocessor.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uiactions.cpp",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uiactions.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uiattributescontroller.cpp",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uiattributescontroller.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uibasedatasource.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uibitmapscontroller.cpp",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uibitmapscontroller.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uicolor.cpp",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uicolor.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uicolorchoosercontroller.cpp",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uicolorchoosercontroller.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uicolorscontroller.cpp",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uicolorscontroller.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uicolorslider.cpp",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uicolorslider.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uicrosslines.cpp",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uicrosslines.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uidescriptioneditor.uidesc",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uidialogcontroller.cpp",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uidialogcontroller.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uieditcontroller.cpp",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uieditcontroller.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uieditmenucontroller.cpp",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uieditmenucontroller.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uieditview.cpp",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uieditview.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uifocussettingscontroller.cpp",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uifocussettingscontroller.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uifontscontroller.cpp",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uifontscontroller.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uigradientscontroller.cpp",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uigradientscontroller.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uigrid.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uigridcontroller.cpp",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uigridcontroller.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uioverlayview.cpp",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uioverlayview.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uiselection.cpp",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uiselection.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uitagscontroller.cpp",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uitagscontroller.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uitemplatecontroller.cpp",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uitemplatecontroller.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uitemplatesettingscontroller.cpp",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uitemplatesettingscontroller.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uiundomanager.cpp",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uiundomanager.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uiviewcreatecontroller.cpp",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/editing/uiviewcreatecontroller.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/animationsplashscreencreator.cpp",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/animationsplashscreencreator.h",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/animknobcreator.cpp",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/animknobcreator.h",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/autoanimationcreator.cpp",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/autoanimationcreator.h",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/checkboxcreator.cpp",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/checkboxcreator.h",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/controlcreator.cpp",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/controlcreator.h",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/gradientviewcreator.cpp",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/gradientviewcreator.h",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/kickbuttoncreator.cpp",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/kickbuttoncreator.h",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/knobcreator.cpp",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/knobcreator.h",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/layeredviewcontainercreator.cpp",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/layeredviewcontainercreator.h",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/moviebitmapcreator.cpp",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/moviebitmapcreator.h",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/moviebuttoncreator.cpp",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/moviebuttoncreator.h",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/multibitmapcontrolcreator.cpp",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/multibitmapcontrolcreator.h",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/multilinetextlabelcreator.cpp",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/multilinetextlabelcreator.h",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/onoffbuttoncreator.cpp",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/onoffbuttoncreator.h",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/optionmenucreator.cpp",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/optionmenucreator.h",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/paramdisplaycreator.cpp",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/paramdisplaycreator.h",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/rockerswitchcreator.cpp",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/rockerswitchcreator.h",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/rowcolumnviewcreator.cpp",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/rowcolumnviewcreator.h",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/scrollviewcreator.cpp",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/scrollviewcreator.h",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/searchtexteditcreator.cpp",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/searchtexteditcreator.h",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/segmentbuttoncreator.cpp",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/segmentbuttoncreator.h",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/shadowviewcontainercreator.cpp",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/shadowviewcontainercreator.h",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/sliderviewcreator.cpp",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/sliderviewcreator.h",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/splitviewcreator.cpp",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/splitviewcreator.h",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/stringlistcontrolcreator.cpp",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/stringlistcontrolcreator.h",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/switchcreators.cpp",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/switchcreators.h",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/textbuttoncreator.cpp",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/textbuttoncreator.h",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/texteditcreator.cpp",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/texteditcreator.h",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/textlabelcreator.cpp",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/textlabelcreator.h",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/uiviewswitchcontainercreator.cpp",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/uiviewswitchcontainercreator.h",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/viewcontainercreator.cpp",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/viewcontainercreator.h",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/viewcreator.cpp",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/viewcreator.h",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/vumetercreator.cpp",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/vumetercreator.h",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/xypadcreator.cpp",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription/viewcreator/xypadcreator.h",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"path" : "out/build/x64-Debug/vst3sdk/VSTGUI.build/vstgui/uidescription/CMakeFiles/vstgui_uidescription.dir/cmake_pch.hxx",
+			"sourceGroupIndex" : 5
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

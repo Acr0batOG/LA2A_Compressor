@@ -1,0 +1,447 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.14.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "vst3sdk",
+					"childIndexes" : 
+					[
+						2,
+						8,
+						9,
+						10,
+						15
+					],
+					"jsonFile" : "directory-vst3sdk-Debug-eebb7914a562959e0f1b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk",
+					"targetIndexes" : 
+					[
+						1,
+						2,
+						3,
+						5,
+						6,
+						7,
+						8,
+						12
+					]
+				},
+				{
+					"build" : "vst3sdk/VSTGUI.build",
+					"childIndexes" : 
+					[
+						3
+					],
+					"jsonFile" : "directory-vst3sdk.VSTGUI.build-Debug-bbb283e2e9cf73ab6dac.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4"
+				},
+				{
+					"build" : "vst3sdk/VSTGUI.build/vstgui",
+					"childIndexes" : 
+					[
+						4,
+						5,
+						6,
+						7
+					],
+					"jsonFile" : "directory-vst3sdk.VSTGUI.build.vstgui-Debug-40c193a92b8e42f2c62b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25.0"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 1,
+					"source" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui"
+				},
+				{
+					"build" : "vst3sdk/VSTGUI.build/vstgui/lib",
+					"jsonFile" : "directory-vst3sdk.VSTGUI.build.vstgui.lib-Debug-8afc758ab38a51bd016d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25.0"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 1,
+					"source" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/lib",
+					"targetIndexes" : 
+					[
+						10
+					]
+				},
+				{
+					"build" : "vst3sdk/VSTGUI.build/vstgui/uidescription",
+					"jsonFile" : "directory-vst3sdk.VSTGUI.build.vstgui.uidescription-Debug-f753c3f65520ff02173c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25.0"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 1,
+					"source" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription",
+					"targetIndexes" : 
+					[
+						13
+					]
+				},
+				{
+					"build" : "vst3sdk/VSTGUI.build/vstgui/uidescription-scripting",
+					"jsonFile" : "directory-vst3sdk.VSTGUI.build.vstgui.uidescription-scripting-Debug-f403814ea825d4e40887.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25.0"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 1,
+					"source" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/uidescription-scripting",
+					"targetIndexes" : 
+					[
+						14
+					]
+				},
+				{
+					"build" : "vst3sdk/VSTGUI.build/vstgui/standalone",
+					"jsonFile" : "directory-vst3sdk.VSTGUI.build.vstgui.standalone-Debug-01c178ec25114909f8f7.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25.0"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 1,
+					"source" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/vstgui4/vstgui/standalone",
+					"targetIndexes" : 
+					[
+						11
+					]
+				},
+				{
+					"build" : "vst3sdk/public.sdk/source/vst/interappaudio",
+					"jsonFile" : "directory-vst3sdk.public.sdk.source.vst.interappaudio-Debug-272012163e5d002c5f16.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/public.sdk/source/vst/interappaudio"
+				},
+				{
+					"build" : "vst3sdk/public.sdk/source/vst/auwrapper",
+					"jsonFile" : "directory-vst3sdk.public.sdk.source.vst.auwrapper-Debug-9f77cee1198f8edd27ce.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/public.sdk/source/vst/auwrapper"
+				},
+				{
+					"build" : "vst3sdk/public.sdk/samples/vst-hosting",
+					"childIndexes" : 
+					[
+						11,
+						12,
+						13,
+						14
+					],
+					"jsonFile" : "directory-vst3sdk.public.sdk.samples.vst-hosting-Debug-c3b340df2a880c747ac3.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/public.sdk/samples/vst-hosting"
+				},
+				{
+					"build" : "vst3sdk/public.sdk/samples/vst-hosting/audiohost",
+					"jsonFile" : "directory-vst3sdk.public.sdk.samples.vst-hosting.audiohost-Debug-ff2b003920616230c274.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25.0"
+					},
+					"parentIndex" : 10,
+					"projectIndex" : 1,
+					"source" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/public.sdk/samples/vst-hosting/audiohost"
+				},
+				{
+					"build" : "vst3sdk/public.sdk/samples/vst-hosting/editorhost",
+					"jsonFile" : "directory-vst3sdk.public.sdk.samples.vst-hosting.editorhost-Debug-19ba593454f1944cb317.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25.0"
+					},
+					"parentIndex" : 10,
+					"projectIndex" : 1,
+					"source" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/public.sdk/samples/vst-hosting/editorhost"
+				},
+				{
+					"build" : "vst3sdk/public.sdk/samples/vst-hosting/inspectorapp",
+					"jsonFile" : "directory-vst3sdk.public.sdk.samples.vst-hosting.inspectorapp-Debug-2350665d6fdfd862dfe5.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25.0"
+					},
+					"parentIndex" : 10,
+					"projectIndex" : 1,
+					"source" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/public.sdk/samples/vst-hosting/inspectorapp"
+				},
+				{
+					"build" : "vst3sdk/public.sdk/samples/vst-hosting/validator",
+					"jsonFile" : "directory-vst3sdk.public.sdk.samples.vst-hosting.validator-Debug-dcc646e5306198fe2b98.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25.0"
+					},
+					"parentIndex" : 10,
+					"projectIndex" : 1,
+					"source" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/public.sdk/samples/vst-hosting/validator",
+					"targetIndexes" : 
+					[
+						9
+					]
+				},
+				{
+					"build" : "vst3sdk/public.sdk/samples/vst-utilities",
+					"childIndexes" : 
+					[
+						16
+					],
+					"jsonFile" : "directory-vst3sdk.public.sdk.samples.vst-utilities-Debug-ab03f2283df1fbe6bf6e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/public.sdk/samples/vst-utilities"
+				},
+				{
+					"build" : "vst3sdk/public.sdk/samples/vst-utilities/moduleinfotool",
+					"jsonFile" : "directory-vst3sdk.public.sdk.samples.vst-utilities.moduleinfotool-Debug-2ca28776659525ef61e7.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25.0"
+					},
+					"parentIndex" : 15,
+					"projectIndex" : 1,
+					"source" : "C:/Users/RSmith/VST3/VST_SDK/vst3sdk/public.sdk/samples/vst-utilities/moduleinfotool",
+					"targetIndexes" : 
+					[
+						4
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "LA2A_Compressor",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16
+					],
+					"name" : "vstsdk",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "LA2A_Compressor::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-LA2A_Compressor-Debug-f58707939de2501e4e57.json",
+					"name" : "LA2A_Compressor",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "base::@84df0381bbe72cab14f2",
+					"jsonFile" : "target-base-Debug-22c36fe09305cfd2efb1.json",
+					"name" : "base",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "cmake_VST_modules::@84df0381bbe72cab14f2",
+					"jsonFile" : "target-cmake_VST_modules-Debug-b8c0700ac91700f67909.json",
+					"name" : "cmake_VST_modules",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "cmake_modules::@84df0381bbe72cab14f2",
+					"jsonFile" : "target-cmake_modules-Debug-19724f6569b38c8c3c32.json",
+					"name" : "cmake_modules",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 16,
+					"id" : "moduleinfotool::@0ccd92616ad435ec5cfd",
+					"jsonFile" : "target-moduleinfotool-Debug-72e11cb9f44228d16b71.json",
+					"name" : "moduleinfotool",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "pluginterfaces::@84df0381bbe72cab14f2",
+					"jsonFile" : "target-pluginterfaces-Debug-a5d55b522ce849225567.json",
+					"name" : "pluginterfaces",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "sdk::@84df0381bbe72cab14f2",
+					"jsonFile" : "target-sdk-Debug-440c4bab0b1dc57c7604.json",
+					"name" : "sdk",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "sdk_common::@84df0381bbe72cab14f2",
+					"jsonFile" : "target-sdk_common-Debug-771532fffbae34d61ca5.json",
+					"name" : "sdk_common",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "sdk_hosting::@84df0381bbe72cab14f2",
+					"jsonFile" : "target-sdk_hosting-Debug-04927366687cca9b3482.json",
+					"name" : "sdk_hosting",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 14,
+					"id" : "validator::@cb6a5f45744856ded658",
+					"jsonFile" : "target-validator-Debug-9d8e4dec433671683fd3.json",
+					"name" : "validator",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "vstgui::@54a0746fa10a39fdb5d0",
+					"jsonFile" : "target-vstgui-Debug-e94d093a0e218016fadf.json",
+					"name" : "vstgui",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "vstgui_standalone::@ba128293594f8ecb9757",
+					"jsonFile" : "target-vstgui_standalone-Debug-809cd4c2cd3654ca5371.json",
+					"name" : "vstgui_standalone",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "vstgui_support::@84df0381bbe72cab14f2",
+					"jsonFile" : "target-vstgui_support-Debug-f01b3453e9fc3f7378be.json",
+					"name" : "vstgui_support",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "vstgui_uidescription::@119a8cbf1440fab7ca2b",
+					"jsonFile" : "target-vstgui_uidescription-Debug-8e70384e7b6c91b7d805.json",
+					"name" : "vstgui_uidescription",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "vstgui_uiscripting::@4eba28fc70dd90b49c35",
+					"jsonFile" : "target-vstgui_uiscripting-Debug-75ec7d37c52b3efb2373.json",
+					"name" : "vstgui_uiscripting",
+					"projectIndex" : 1
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/RSmith/VST_Outputs/LA2A_Compressor/out/build/x64-Debug",
+		"source" : "C:/Users/RSmith/VST_Outputs/LA2A_Compressor"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 8
+	}
+}
