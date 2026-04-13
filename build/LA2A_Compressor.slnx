@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Solution>
+	<Configurations>
+		<BuildType Name="Debug"/>
+		<BuildType Name="Release"/>
+		<Platform Name="x64"/>
+	</Configurations>
+	<Project Path="LA2A_Compressor.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="caaf4ed8-152c-33f6-a8ef-0320fdf76e10" DefaultStartup="true">
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		<BuildDependency Project="vst3sdk/base.vcxproj"/>
+		<BuildDependency Project="vst3sdk/public.sdk/samples/vst-utilities/moduleinfotool/moduleinfotool.vcxproj"/>
+		<BuildDependency Project="vst3sdk/pluginterfaces.vcxproj"/>
+		<BuildDependency Project="vst3sdk/sdk.vcxproj"/>
+		<BuildDependency Project="vst3sdk/sdk_common.vcxproj"/>
+		<BuildDependency Project="vst3sdk/public.sdk/samples/vst-hosting/validator/validator.vcxproj"/>
+		<BuildDependency Project="vst3sdk/VSTGUI.build/vstgui/lib/vstgui.vcxproj"/>
+		<BuildDependency Project="vst3sdk/vstgui_support.vcxproj"/>
+		<BuildDependency Project="vst3sdk/VSTGUI.build/vstgui/uidescription/vstgui_uidescription.vcxproj"/>
+	</Project>
+	<Project Path="vst3sdk/VSTGUI.build/vstgui/uidescription-scripting/vstgui_uiscripting.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="dd317cdd-013b-3800-b67d-da1469400bab">
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+	</Project>
+	<Folder Name="/Hosting-Examples/">
+		<Project Path="vst3sdk/public.sdk/samples/vst-hosting/validator/validator.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="fc7d0df1-5a9f-3b22-8ac2-6b6522035426">
+			<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+			<BuildDependency Project="vst3sdk/base.vcxproj"/>
+			<BuildDependency Project="vst3sdk/pluginterfaces.vcxproj"/>
+			<BuildDependency Project="vst3sdk/sdk_common.vcxproj"/>
+			<BuildDependency Project="vst3sdk/sdk_hosting.vcxproj"/>
+		</Project>
+	</Folder>
+	<Folder Name="/Libraries/">
+		<Project Path="vst3sdk/base.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="3baee5ef-3a96-39e1-9adf-b93f8928d726">
+			<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		</Project>
+		<Project Path="vst3sdk/cmake_VST_modules.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="ede0f176-6a25-34c8-be49-e13743944abe">
+			<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+			<Build Solution="Debug|*" Project="false"/>
+			<Build Solution="Release|*" Project="false"/>
+		</Project>
+		<Project Path="vst3sdk/cmake_modules.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="a84e4eb1-3558-3efd-a1d4-0f7e795ed93d">
+			<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+			<Build Solution="Debug|*" Project="false"/>
+			<Build Solution="Release|*" Project="false"/>
+		</Project>
+		<Project Path="vst3sdk/pluginterfaces.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="07e73e6a-5d94-36f3-a95f-79376547e9bc">
+			<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		</Project>
+		<Project Path="vst3sdk/sdk.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="6a5cbb5c-d215-3ef0-b3cf-576d4fe16573">
+			<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+			<BuildDependency Project="vst3sdk/base.vcxproj"/>
+			<BuildDependency Project="vst3sdk/pluginterfaces.vcxproj"/>
+			<BuildDependency Project="vst3sdk/sdk_common.vcxproj"/>
+		</Project>
+		<Project Path="vst3sdk/sdk_common.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="9c8cc7ee-661d-34a2-a668-cab9b14dea31">
+			<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+			<BuildDependency Project="vst3sdk/base.vcxproj"/>
+			<BuildDependency Project="vst3sdk/pluginterfaces.vcxproj"/>
+		</Project>
+		<Project Path="vst3sdk/sdk_hosting.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="611143cc-ce24-3b16-842c-16a904d8167c">
+			<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+			<BuildDependency Project="vst3sdk/base.vcxproj"/>
+			<BuildDependency Project="vst3sdk/pluginterfaces.vcxproj"/>
+			<BuildDependency Project="vst3sdk/sdk_common.vcxproj"/>
+		</Project>
+		<Project Path="vst3sdk/VSTGUI.build/vstgui/lib/vstgui.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="570df741-f5a3-34ce-a243-1cea5045c637">
+			<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		</Project>
+		<Project Path="vst3sdk/VSTGUI.build/vstgui/standalone/vstgui_standalone.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="6936e1c1-8898-3919-baee-ea3ab4e128f8">
+			<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		</Project>
+		<Project Path="vst3sdk/vstgui_support.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="b531e89a-b253-33e4-9db1-ce50fcfa297e">
+			<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+			<BuildDependency Project="vst3sdk/base.vcxproj"/>
+			<BuildDependency Project="vst3sdk/VSTGUI.build/vstgui/lib/vstgui.vcxproj"/>
+			<BuildDependency Project="vst3sdk/VSTGUI.build/vstgui/uidescription/vstgui_uidescription.vcxproj"/>
+		</Project>
+		<Project Path="vst3sdk/VSTGUI.build/vstgui/uidescription/vstgui_uidescription.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="c55e90fb-209b-3a3b-9db7-224e1700c4d2">
+			<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+			<BuildDependency Project="vst3sdk/VSTGUI.build/vstgui/lib/vstgui.vcxproj"/>
+		</Project>
+	</Folder>
+	<Folder Name="/Predefined/">
+		<Project Path="ALL_BUILD.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="3a21a367-58e4-3852-8615-58987fb27ee4">
+			<BuildDependency Project="LA2A_Compressor.vcxproj"/>
+			<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+			<BuildDependency Project="vst3sdk/base.vcxproj"/>
+			<BuildDependency Project="vst3sdk/public.sdk/samples/vst-utilities/moduleinfotool/moduleinfotool.vcxproj"/>
+			<BuildDependency Project="vst3sdk/pluginterfaces.vcxproj"/>
+			<BuildDependency Project="vst3sdk/sdk.vcxproj"/>
+			<BuildDependency Project="vst3sdk/sdk_common.vcxproj"/>
+			<BuildDependency Project="vst3sdk/sdk_hosting.vcxproj"/>
+			<BuildDependency Project="vst3sdk/public.sdk/samples/vst-hosting/validator/validator.vcxproj"/>
+			<BuildDependency Project="vst3sdk/VSTGUI.build/vstgui/lib/vstgui.vcxproj"/>
+			<BuildDependency Project="vst3sdk/VSTGUI.build/vstgui/standalone/vstgui_standalone.vcxproj"/>
+			<BuildDependency Project="vst3sdk/vstgui_support.vcxproj"/>
+			<BuildDependency Project="vst3sdk/VSTGUI.build/vstgui/uidescription/vstgui_uidescription.vcxproj"/>
+			<BuildDependency Project="vst3sdk/VSTGUI.build/vstgui/uidescription-scripting/vstgui_uiscripting.vcxproj"/>
+			<Build Solution="Debug|*" Project="false"/>
+			<Build Solution="Release|*" Project="false"/>
+		</Project>
+		<Project Path="ZERO_CHECK.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="efd84aac-1f46-3250-85c3-0f0f75a3e1b4"/>
+	</Folder>
+	<Folder Name="/Utilities/">
+		<Project Path="vst3sdk/public.sdk/samples/vst-utilities/moduleinfotool/moduleinfotool.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="0ed661e6-a4f0-3d47-8080-c7ec8c640652">
+			<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+			<BuildDependency Project="vst3sdk/base.vcxproj"/>
+			<BuildDependency Project="vst3sdk/pluginterfaces.vcxproj"/>
+			<BuildDependency Project="vst3sdk/sdk_common.vcxproj"/>
+			<BuildDependency Project="vst3sdk/sdk_hosting.vcxproj"/>
+		</Project>
+	</Folder>
+</Solution>
