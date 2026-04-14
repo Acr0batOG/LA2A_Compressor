@@ -17,6 +17,7 @@ namespace {
 		float y = x * drive;
 
 		// Tube-style soft asymmetry
+		//Used for slight distortion in compressor
 		return y / (1.0f + fabsf(y));
 	}
 }
