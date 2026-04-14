@@ -1,0 +1,46 @@
+^C:\USERS\RSMITH\VSTPLUGINS\LA2A_COMPRESSOR\RESOURCE\LA2AEDITOR.UIDESC
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different C:/Users/RSmith/VSTPlugins/LA2A_Compressor/resource/LA2Aeditor.uidesc C:/Users/RSmith/VSTPlugins/LA2A_Compressor/build/VST3/Debug/LA2A_Compressor.vst3/Contents/Resources/LA2Aeditor.uidesc
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo "[SMTG] Copied C:/Users/RSmith/VSTPlugins/LA2A_Compressor/resource/LA2Aeditor.uidesc to C:/Users/RSmith/VSTPlugins/LA2A_Compressor/build/VST3/Debug/LA2A_Compressor.vst3/Contents/Resources/LA2Aeditor.uidesc"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\RSMITH\VSTPLUGINS\LA2A_COMPRESSOR\RESOURCE\3E2117D28482586B8A7C0F0AD3C3EDC3_SNAPSHOT.PNG
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different C:/Users/RSmith/VSTPlugins/LA2A_Compressor/resource/3E2117D28482586B8A7C0F0AD3C3EDC3_snapshot.png C:/Users/RSmith/VSTPlugins/LA2A_Compressor/build/VST3/Debug/LA2A_Compressor.vst3/Contents/Resources/Snapshots/3E2117D28482586B8A7C0F0AD3C3EDC3_snapshot.png
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo "[SMTG] Copied C:/Users/RSmith/VSTPlugins/LA2A_Compressor/resource/3E2117D28482586B8A7C0F0AD3C3EDC3_snapshot.png to C:/Users/RSmith/VSTPlugins/LA2A_Compressor/build/VST3/Debug/LA2A_Compressor.vst3/Contents/Resources/Snapshots/3E2117D28482586B8A7C0F0AD3C3EDC3_snapshot.png"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\RSMITH\VSTPLUGINS\LA2A_COMPRESSOR\RESOURCE\3E2117D28482586B8A7C0F0AD3C3EDC3_SNAPSHOT_2.0X.PNG
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different C:/Users/RSmith/VSTPlugins/LA2A_Compressor/resource/3E2117D28482586B8A7C0F0AD3C3EDC3_snapshot_2.0x.png C:/Users/RSmith/VSTPlugins/LA2A_Compressor/build/VST3/Debug/LA2A_Compressor.vst3/Contents/Resources/Snapshots/3E2117D28482586B8A7C0F0AD3C3EDC3_snapshot_2.0x.png
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo "[SMTG] Copied C:/Users/RSmith/VSTPlugins/LA2A_Compressor/resource/3E2117D28482586B8A7C0F0AD3C3EDC3_snapshot_2.0x.png to C:/Users/RSmith/VSTPlugins/LA2A_Compressor/build/VST3/Debug/LA2A_Compressor.vst3/Contents/Resources/Snapshots/3E2117D28482586B8A7C0F0AD3C3EDC3_snapshot_2.0x.png"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\RSMITH\VSTPLUGINS\LA2A_COMPRESSOR\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/RSmith/VSTPlugins/LA2A_Compressor -BC:/Users/RSmith/VSTPlugins/LA2A_Compressor/build --check-stamp-file C:/Users/RSmith/VSTPlugins/LA2A_Compressor/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\Users\RSmith\VST_Outputs\LA2A_Compressor\source\LA2Aprocessor.cpp">
+    <ClCompile Include="C:\Users\RSmith\VSTPlugins\LA2A_Compressor\source\LA2Aprocessor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\RSmith\VST_Outputs\LA2A_Compressor\source\LA2Acontroller.cpp">
+    <ClCompile Include="C:\Users\RSmith\VSTPlugins\LA2A_Compressor\source\LA2Acontroller.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\RSmith\VST_Outputs\LA2A_Compressor\source\LA2Aentry.cpp">
+    <ClCompile Include="C:\Users\RSmith\VSTPlugins\LA2A_Compressor\source\LA2Aentry.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="C:\Users\RSmith\VST3\VST_SDK\vst3sdk\public.sdk\source\main\dllmain.cpp">
@@ -15,51 +15,51 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="C:\Users\RSmith\VST_Outputs\LA2A_Compressor\source\version.h">
+    <ClInclude Include="C:\Users\RSmith\VSTPlugins\LA2A_Compressor\source\version.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\RSmith\VST_Outputs\LA2A_Compressor\source\LA2Acids.h">
+    <ClInclude Include="C:\Users\RSmith\VSTPlugins\LA2A_Compressor\source\LA2Acids.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\RSmith\VST_Outputs\LA2A_Compressor\source\LA2Aprocessor.h">
+    <ClInclude Include="C:\Users\RSmith\VSTPlugins\LA2A_Compressor\source\LA2Aprocessor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\RSmith\VST_Outputs\LA2A_Compressor\source\LA2Acontroller.h">
+    <ClInclude Include="C:\Users\RSmith\VSTPlugins\LA2A_Compressor\source\LA2Acontroller.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\RSmith\VST_Outputs\LA2A_Compressor\resource\LA2Aeditor.uidesc">
+    <CustomBuild Include="C:\Users\RSmith\VSTPlugins\LA2A_Compressor\resource\LA2Aeditor.uidesc">
       <Filter>Contents\Resources</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Users\RSmith\VST_Outputs\LA2A_Compressor\resource\3E2117D28482586B8A7C0F0AD3C3EDC3_snapshot.png">
+    <CustomBuild Include="C:\Users\RSmith\VSTPlugins\LA2A_Compressor\resource\3E2117D28482586B8A7C0F0AD3C3EDC3_snapshot.png">
       <Filter>Contents\Resources\Snapshots</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Users\RSmith\VST_Outputs\LA2A_Compressor\resource\3E2117D28482586B8A7C0F0AD3C3EDC3_snapshot_2.0x.png">
+    <CustomBuild Include="C:\Users\RSmith\VSTPlugins\LA2A_Compressor\resource\3E2117D28482586B8A7C0F0AD3C3EDC3_snapshot_2.0x.png">
       <Filter>Contents\Resources\Snapshots</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Users\RSmith\VST_Outputs\LA2A_Compressor\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\RSmith\VSTPlugins\LA2A_Compressor\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="C:\Users\RSmith\VST_Outputs\LA2A_Compressor\resource\win32resource.rc">
+    <ResourceCompile Include="C:\Users\RSmith\VSTPlugins\LA2A_Compressor\resource\win32resource.rc">
       <Filter>Source Files</Filter>
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Contents">
-      <UniqueIdentifier>{03A0E17A-81AE-39FF-A5C0-503EFAE14BC9}</UniqueIdentifier>
+      <UniqueIdentifier>{86E1557F-714C-372E-B096-1906B9458633}</UniqueIdentifier>
     </Filter>
     <Filter Include="Contents\Resources">
-      <UniqueIdentifier>{F9881135-7736-37D2-9406-C7C918855B1C}</UniqueIdentifier>
+      <UniqueIdentifier>{523EE870-1448-3B1C-8CA5-E14DC7A8912F}</UniqueIdentifier>
     </Filter>
     <Filter Include="Contents\Resources\Snapshots">
-      <UniqueIdentifier>{EFA9F8A4-D3A1-38BB-B265-4BFAF517A071}</UniqueIdentifier>
+      <UniqueIdentifier>{8ACB65C2-0434-3876-9011-E18F59E46AC6}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{D3EB71E9-B22E-3698-95E3-EEF332F6EBEB}</UniqueIdentifier>
+      <UniqueIdentifier>{9871DF8E-C134-36D0-AB11-E73B8B0A6E74}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{C7A9D11D-30E5-373A-AF0F-9FA8CBFED5FB}</UniqueIdentifier>
+      <UniqueIdentifier>{78C3CEF4-1956-3F6C-B276-1FD14E9221A3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

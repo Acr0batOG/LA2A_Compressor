@@ -1,0 +1,51 @@
+{
+  "Name": "LA2A_Compressor",
+  "Version": "1.0.0.0",
+  "Factory Info": {
+    "Vendor": "My Plug-in Company",
+    "URL": "https://www.mycompanyname.com",
+    "E-Mail": "mailto:info@mycompanyname.com",
+    "Flags": {
+      "Unicode": true,
+      "Classes Discardable": false,
+      "Component Non Discardable": false,
+    },
+  },
+  "Classes": [
+    {
+      "CID": "3E2117D28482586B8A7C0F0AD3C3EDC3",
+      "Category": "Audio Module Class",
+      "Name": "LA2A_Compressor",
+      "Vendor": "My Plug-in Company",
+      "Version": "1.0.0.0",
+      "SDKVersion": "VST 3.8.0",
+      "Sub Categories": [
+        "Fx",
+      ],
+      "Class Flags": 1,
+      "Cardinality": 2147483647,
+      "Snapshots": [
+        {
+          "Scale Factor": 1,
+          "Path": "Contents/Resources/Snapshots/3E2117D28482586B8A7C0F0AD3C3EDC3_snapshot.png",
+        },
+        {
+          "Scale Factor": 2,
+          "Path": "Contents/Resources/Snapshots/3E2117D28482586B8A7C0F0AD3C3EDC3_snapshot_2.0x.png",
+        },
+      ],
+    },
+    {
+      "CID": "776B35EC74FF54549EC633A162FF29BD",
+      "Category": "Component Controller Class",
+      "Name": "LA2A_CompressorController",
+      "Vendor": "My Plug-in Company",
+      "Version": "1.0.0.0",
+      "SDKVersion": "VST 3.8.0",
+      "Class Flags": 0,
+      "Cardinality": 2147483647,
+      "Snapshots": [
+      ],
+    },
+  ],
+}

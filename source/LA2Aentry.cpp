@@ -18,9 +18,9 @@ using namespace MyCompanyName;
 //  VST Plug-in Entry
 //------------------------------------------------------------------------
 
-BEGIN_FACTORY_DEF ("My Plug-in Company", 
+BEGIN_FACTORY_DEF ("RSmith Plugins", 
 			       "https://www.mycompanyname.com", 
-			       "mailto:info@mycompanyname.com")
+			       "mailto:grhys2001@gmail.com")
 
 	//---First Plug-in included in this factory-------
 	// its kVstAudioEffectClass component

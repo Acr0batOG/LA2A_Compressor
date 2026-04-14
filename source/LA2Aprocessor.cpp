@@ -10,6 +10,17 @@
 
 using namespace Steinberg;
 
+namespace {
+	inline float saturate(float x)
+	{
+		const float drive = 1.42f;
+		float y = x * drive;
+
+		// Tube-style soft asymmetry
+		return y / (1.0f + fabsf(y));
+	}
+}
+
 namespace MyCompanyName {
 //------------------------------------------------------------------------
 // LA2A_CompressorProcessor

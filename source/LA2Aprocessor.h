@@ -50,7 +50,15 @@ public:
 
 //------------------------------------------------------------------------
 protected:
-
+	bool bypass = false;
+	float inputGain = 0.25f; // 0 - 1f, 0–100% input gain, first knob being used
+	float outputGain = 0.25f; // 0 - 1f, 0–100% output gain, second knob being used
+	//Threshold is the level above which the compressor starts to work Valued 0 - 1, set as default
+	float threshold = 0.5f; 
+	// This will be a knob called "Mix" Valued 0 - 100%
+	float mix = 0.50f;            // dry/wet
+	// This will be a knob called "Tone" Valued 0 - 1
+	float compressorEq = .5f;      // 0 = darkest, 0.5 = neutral, 1 = brightest
 };
 
 //------------------------------------------------------------------------

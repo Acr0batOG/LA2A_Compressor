@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="C:\Users\RSmith\VST_Outputs\LA2A_Compressor\build\CMakeFiles\e7dc0907bcb298fa6ea572594fe2b08a\generate.stamp.rule">
+    <CustomBuild Include="C:\Users\RSmith\VSTPlugins\LA2A_Compressor\build\CMakeFiles\087f9ba2c2277dbae1e451ac4f403c46\generate.stamp.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{7CCDF2EF-765A-3C42-95D2-8F94991AB7CB}</UniqueIdentifier>
+      <UniqueIdentifier>{4EAF344D-CE2B-36E5-B573-4BB9D88A0D20}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
