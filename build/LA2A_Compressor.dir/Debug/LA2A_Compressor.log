@@ -1,21 +1,24 @@
-﻿  LA2Acontroller.cpp
-  LA2Aentry.cpp
+﻿  Generating VST3/Debug/LA2A_Compressor.vst3/Contents/Resources/Snapshots/3E2117D28482586B8A7C0F0AD3C3EDC3_snapshot.png
+  [SMTG] Copied C:/Users/grhys/VSTPlugins/LA2A_Compressor/resource/3E2117D28482586B8A7C0F0AD3C3EDC3_snapshot.png to C:/Users/grhys/VSTPlugins/LA2A_Compressor/build/VST3/Debug/LA2A_Compressor.vst3/Contents/Resources/Snapshots/3E2117D28482586B8A7C0F0AD3C3EDC3_snapshot.png
+  Generating VST3/Debug/LA2A_Compressor.vst3/Contents/Resources/Snapshots/3E2117D28482586B8A7C0F0AD3C3EDC3_snapshot_2.0x.png
+  [SMTG] Copied C:/Users/grhys/VSTPlugins/LA2A_Compressor/resource/3E2117D28482586B8A7C0F0AD3C3EDC3_snapshot_2.0x.png to C:/Users/grhys/VSTPlugins/LA2A_Compressor/build/VST3/Debug/LA2A_Compressor.vst3/Contents/Resources/Snapshots/3E2117D28482586B8A7C0F0AD3C3EDC3_snapshot_2.0x.png
   LA2Aprocessor.cpp
-  LA2A_Compressor.vcxproj -> C:\Users\RSmith\VSTPlugins\LA2A_Compressor\build\VST3\Debug\LA2A_Compressor.vst3\Contents\x86_64-win\LA2A_Compressor.vst3
+     Creating library C:/Users/grhys/VSTPlugins/LA2A_Compressor/build/lib/Debug/LA2A_Compressor.lib and object C:/Users/grhys/VSTPlugins/LA2A_Compressor/build/lib/Debug/LA2A_Compressor.exp
+  LA2A_Compressor.vcxproj -> C:\Users\grhys\VSTPlugins\LA2A_Compressor\build\VST3\Debug\LA2A_Compressor.vst3\Contents\x86_64-win\LA2A_Compressor.vst3
   [SMTG] Copy PlugIn.ico and desktop.ini and change their attributes.			
   [SMTG] Validator started...
   * Loading module...
   
-  	C:/Users/RSmith/VSTPlugins/LA2A_Compressor/build/VST3/Debug/LA2A_Compressor.vst3
+  	C:/Users/grhys/VSTPlugins/LA2A_Compressor/build/VST3/Debug/LA2A_Compressor.vst3
   
   * Check valid bundle structure...
   
   * Scanning classes...
   
     Factory Info:
-  	vendor = My Plug-in Company
+  	vendor = RSmith Plugins
   	url = https://www.mycompanyname.com
-  	email = mailto:info@mycompanyname.com
+  	email = mailto:grhys2001@gmail.com
   
     Class Info 0:
   	name = LA2A_Compressor
@@ -36,8 +39,8 @@
   * Checking snapshots...
   
   Found snapshots for 'LA2A_Compressor'
-   - C:/Users/RSmith/VSTPlugins/LA2A_Compressor/build/VST3/Debug/LA2A_Compressor.vst3/Contents/Resources/Snapshots/3E2117D28482586B8A7C0F0AD3C3EDC3_snapshot.png [1x]
-   - C:/Users/RSmith/VSTPlugins/LA2A_Compressor/build/VST3/Debug/LA2A_Compressor.vst3/Contents/Resources/Snapshots/3E2117D28482586B8A7C0F0AD3C3EDC3_snapshot_2.0x.png [2x]
+   - C:/Users/grhys/VSTPlugins/LA2A_Compressor/build/VST3/Debug/LA2A_Compressor.vst3/Contents/Resources/Snapshots/3E2117D28482586B8A7C0F0AD3C3EDC3_snapshot.png [1x]
+   - C:/Users/grhys/VSTPlugins/LA2A_Compressor/build/VST3/Debug/LA2A_Compressor.vst3/Contents/Resources/Snapshots/3E2117D28482586B8A7C0F0AD3C3EDC3_snapshot_2.0x.png [2x]
   
   * Creating tests...
   
@@ -167,6 +170,7 @@
   
   [Silence Processing]
   Info:  ===Silence Processing ====================================
+  Info:  The component reported a wrong silent flag for its output buffer! : output is silent but silenceFlags not set !
   [Succeeded]
   
   [Parameters Flush (no Buffer)]

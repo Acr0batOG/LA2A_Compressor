@@ -27,6 +27,10 @@ enum ParamIDs : Steinberg::Vst::ParamID
 
 	kCompressionTypeId, // Limit, or compress (0 or 1)
 
+	kCompressorEqId,
+
+	kThresholdId,
+
 	kParamCount
 };
 
