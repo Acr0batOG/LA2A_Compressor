@@ -17,7 +17,7 @@ static const Steinberg::FUID kLA2A_CompressorControllerUID (0x776B35EC, 0x74FF54
 enum ParamIDs : Steinberg::Vst::ParamID
 {
 
-	kBypassId = 0,
+	kBypassId,
 
 	kInputGainId,   //  0–100% input gain, first knob being used
 	kReductionId,    // 0–100% aka peak reduction
@@ -26,10 +26,6 @@ enum ParamIDs : Steinberg::Vst::ParamID
 	kMixId,	  // 0–100% wet/dry mix
 
 	kCompressionTypeId, // Limit, or compress (0 or 1)
-
-	kCompressorEqId,
-
-	kThresholdId,
 
 	kParamCount
 };

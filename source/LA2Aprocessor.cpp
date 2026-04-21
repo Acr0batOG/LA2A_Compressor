@@ -181,17 +181,20 @@ namespace MyCompanyName {
                         case kInputGainId:
                             inputGain = static_cast<float>(value);   // 0–1
                             break;
+                        case kReductionId:
+                            threshold = static_cast<float>(value);   // 0–1
+							break;
                         case kOutputGainId:
                             outputGain = static_cast<float>(value);  // 0–1
                             break;
-                        case kThresholdId:
-                            threshold = static_cast<float>(value);   // 0–1
+                        case kToneId:
+                            tone = static_cast<float>(value);   // 0–1
                             break;
                         case kMixId:
                             mix = static_cast<float>(value);         // 0–1
                             break;
-                        case kCompressorEqId:
-                            compressorEq = static_cast<float>(value);// 0–1
+                        case kCompressionTypeId:
+                            compressionType = static_cast<float>(value); // 0–1
                             break;
                         case kBypassId:
                             bypass = (value > 0.5);
@@ -269,7 +272,7 @@ namespace MyCompanyName {
         // 0 = darkest (–3 dB HF), 0.5 = neutral, 1 = brightest (+3 dB HF)
         // We implement this as a simple 1-pole IIR tone shelf on the output.
         // Positive toneGain brightens, negative darkens.
-        const float toneGainLin = (compressorEq - 0.5f) * 2.0f; // –1 to +1
+        const float toneGainLin = (tone - 0.5f) * 2.0f; // –1 to +1
         // 1-pole shelf coeff for ~3 kHz crossover
         const float toneCoeff = expf(-2.0f * static_cast<float>(M_PI) * 3000.0f
             / static_cast<float>(sampleRate));
@@ -436,7 +439,8 @@ namespace MyCompanyName {
         if (streamer.readFloat(fVal) == false) return kResultFalse; outputGain = fVal;
         if (streamer.readFloat(fVal) == false) return kResultFalse; threshold = fVal;
         if (streamer.readFloat(fVal) == false) return kResultFalse; mix = fVal;
-        if (streamer.readFloat(fVal) == false) return kResultFalse; compressorEq = fVal;
+        if (streamer.readFloat(fVal) == false) return kResultFalse; tone = fVal;
+        if (streamer.readFloat(fVal) == false) return kResultFalse; compressionType = fVal;
         if (streamer.readInt32(iVal) == false) return kResultFalse; bypass = iVal != 0;
 
         return kResultOk;
@@ -451,7 +455,8 @@ namespace MyCompanyName {
         streamer.writeFloat(outputGain);
         streamer.writeFloat(threshold);
         streamer.writeFloat(mix);
-        streamer.writeFloat(compressorEq);
+        streamer.writeFloat(tone);
+		streamer.writeFloat(compressionType);
         streamer.writeInt32(bypass ? 1 : 0);
 
         return kResultOk;

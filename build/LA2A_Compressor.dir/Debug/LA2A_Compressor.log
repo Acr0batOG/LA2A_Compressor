@@ -2,8 +2,9 @@
   [SMTG] Copied C:/Users/grhys/VSTPlugins/LA2A_Compressor/resource/3E2117D28482586B8A7C0F0AD3C3EDC3_snapshot.png to C:/Users/grhys/VSTPlugins/LA2A_Compressor/build/VST3/Debug/LA2A_Compressor.vst3/Contents/Resources/Snapshots/3E2117D28482586B8A7C0F0AD3C3EDC3_snapshot.png
   Generating VST3/Debug/LA2A_Compressor.vst3/Contents/Resources/Snapshots/3E2117D28482586B8A7C0F0AD3C3EDC3_snapshot_2.0x.png
   [SMTG] Copied C:/Users/grhys/VSTPlugins/LA2A_Compressor/resource/3E2117D28482586B8A7C0F0AD3C3EDC3_snapshot_2.0x.png to C:/Users/grhys/VSTPlugins/LA2A_Compressor/build/VST3/Debug/LA2A_Compressor.vst3/Contents/Resources/Snapshots/3E2117D28482586B8A7C0F0AD3C3EDC3_snapshot_2.0x.png
-  LA2Aprocessor.cpp
-     Creating library C:/Users/grhys/VSTPlugins/LA2A_Compressor/build/lib/Debug/LA2A_Compressor.lib and object C:/Users/grhys/VSTPlugins/LA2A_Compressor/build/lib/Debug/LA2A_Compressor.exp
+  LA2Acontroller.cpp
+C:\Users\grhys\VSTPlugins\LA2A_Compressor\source\LA2Acontroller.cpp(363,1): warning C4702: unreachable code
+C:\Users\grhys\VSTPlugins\LA2A_Compressor\source\LA2Acontroller.cpp(367,1): warning C4715: 'MyCompanyName::LA2A_CompressorController::getParamStringByValue': not all control paths return a value
   LA2A_Compressor.vcxproj -> C:\Users\grhys\VSTPlugins\LA2A_Compressor\build\VST3\Debug\LA2A_Compressor.vst3\Contents\x86_64-win\LA2A_Compressor.vst3
   [SMTG] Copy PlugIn.ico and desktop.ini and change their attributes.			
   [SMTG] Validator started...
@@ -71,7 +72,14 @@
   
   [Scan Parameters]
   Info:  ===Scan Parameters ====================================
-  Info:  This component does not export any parameters!
+  Info:  This component exports 7 parameter(s)
+  Info:     Parameter 000 (id=0): [title="Bypass"] [unit=""] [type = Discrete, default = 0.000000, unit = 0]
+  Info:     Parameter 001 (id=1): [title="Input Gain"] [unit="dB"] [type = Float, default = 0.368421, unit = 0]
+  Info:     Parameter 002 (id=2): [title="Reduction"] [unit="dB"] [type = Float, default = 0.368421, unit = 0]
+  Info:     Parameter 003 (id=3): [title="Output Gain"] [unit="dB"] [type = Float, default = 0.252632, unit = 0]
+  Info:     Parameter 004 (id=4): [title="Tone"] [unit=""] [type = Float, default = 0.500000, unit = 0]
+  Info:     Parameter 005 (id=5): [title="Mix"] [unit=""] [type = Float, default = 0.500000, unit = 0]
+  Info:     Parameter 006 (id=6): [title="Compression Type"] [unit=""] [type = Float, default = 1.000000, unit = 0]
   [Succeeded]
   
   [MIDI Mapping]
@@ -208,7 +216,6 @@
   
   [Parameter Bypass persistence]
   Info:  ===Parameter Bypass persistence ====================================
-  Info:  This plugin does not have a bypass parameter!!!
   [Succeeded]
   
   [In: Stereo: 2 Channels, Out: Stereo: 2 Channels]
@@ -220,13 +227,12 @@
   [Succeeded]
   
   [Accuracy: Block, 1 Parameters, Change every100 Samples]
-  Info:  ===Accuracy: Block, All Parameters, Change every100 Samples ====================================
-  Info:  No Parameters present.
+  Info:  ===Accuracy: Block, 1 Parameters, Change every100 Samples ====================================
   [Succeeded]
   
   [Accuracy: Sample, 1 Parameters, Change every100 Samples]
-  Info:  ===Accuracy: Sample, All Parameters, Change every100 Samples ====================================
-  Info:  No Parameters present.
+  Info:  ===Accuracy: Sample, 1 Parameters, Change every100 Samples ====================================
+  Info:     Not all points have been read via IParameterChanges
   [Succeeded]
   
   -------------------------------------------------------------
@@ -284,14 +290,12 @@
   [Succeeded]
   
   [Accuracy: Block, 1 Parameters, Change every100 Samples]
-  Info:  ===Accuracy: Block, All Parameters, Change every100 Samples ====================================
-  Info:  No Parameters present.
+  Info:  ===Accuracy: Block, 1 Parameters, Change every100 Samples ====================================
   Info:  64bit Audio Processing not supported.
   [Succeeded]
   
   [Accuracy: Sample, 1 Parameters, Change every100 Samples]
-  Info:  ===Accuracy: Sample, All Parameters, Change every100 Samples ====================================
-  Info:  No Parameters present.
+  Info:  ===Accuracy: Sample, 1 Parameters, Change every100 Samples ====================================
   Info:  64bit Audio Processing not supported.
   [Succeeded]
   

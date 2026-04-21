@@ -59,7 +59,8 @@ protected:
 	// This will be a knob called "Mix" Valued 0 - 100% 
 	float mix = 0.50f;            // dry/wet 
 	// This will be a knob called "Tone" Valued 0 - 1 
-	float compressorEq = .5f;      // 0 = darkest, 0.5 = neutral, 1 = brightest Which I would like to be user editable through a UI and   
+	float compressionType = 1.0f; // 0 = limit, 1 = compress (set by UI or program change)
+	float tone = .5f;      // 0 = darkest, 0.5 = neutral, 1 = brightest Which I would like to be user editable through a UI and   
 
 	float attackTime = 10.0f;        // ms — how fast the compressor reacts to increases in level
 

@@ -5,9 +5,6 @@
 #include "LA2Acontroller.h"
 #include "LA2Acids.h"
 #include "vstgui/plugin-bindings/vst3editor.h"
-#include "LA2Acontroller.h"
-#include "LA2Acids.h"
-#include "vstgui/plugin-bindings/vst3editor.h"
 #include "pluginterfaces/base/ustring.h"
 #include "base/source/fstreamer.h"
 #include "pluginterfaces/base/ibstream.h"
@@ -24,18 +21,109 @@ namespace MyCompanyName {
 	//------------------------------------------------------------------------
 	tresult PLUGIN_API LA2A_CompressorController::initialize(FUnknown* context)
 	{
-		// Here the Plug-in will be instantiated
-
-		//---do not forget to call parent ------
 		tresult result = EditControllerEx1::initialize(context);
 		if (result != kResultOk)
 		{
 			return result;
 		}
 
-		// Here you could register some parameters
+		// --- Register parameters here ---
 
-		return result;
+		// Bypass: discrete 0/1
+		parameters.addParameter(
+			STR16("Bypass"),
+			nullptr,
+			2,          // two steps: off/on
+			0.0,        // default = OFF
+			Steinberg::Vst::ParameterInfo::kCanAutomate |
+			Steinberg::Vst::ParameterInfo::kIsBypass,
+			kBypassId
+		);
+
+		
+		parameters.addParameter(
+			STR16("Input Gain"),
+			STR16("dB"),
+			0, // continuous
+			(400.0f - 50.0f) / (1000.0f - 50.0f),
+			Steinberg::Vst::ParameterInfo::kCanAutomate,
+			kInputGainId
+		);
+
+		parameters.addParameter(
+			STR16("Reduction"),
+			STR16("dB"),
+			0, // continuous
+			(400.0f - 50.0f) / (1000.0f - 50.0f),
+			Steinberg::Vst::ParameterInfo::kCanAutomate,
+			kReductionId
+		);
+
+		
+
+		// Feedback: stored normalized (0..1) maps to actual feedback = normalized * 0.95
+		// default actual ~24% -> store normalized = 0.24 / 0.95
+		parameters.addParameter(
+			STR16("Output Gain"),
+			STR16("dB"),
+			0,
+			0.24f / 0.95f,
+			Steinberg::Vst::ParameterInfo::kCanAutomate,
+			kOutputGainId
+		);
+
+		// Tone: normalized [0..1], controller default 0.5 (center)
+		parameters.addParameter(
+			STR16("Tone"),
+			nullptr,
+			0,
+			0.5,
+			Steinberg::Vst::ParameterInfo::kCanAutomate,
+			kToneId
+		);
+
+		// Mix: 0..1
+		parameters.addParameter(
+			STR16("Mix"),
+			nullptr,
+			0,
+			0.50, // default (50%)
+			Steinberg::Vst::ParameterInfo::kCanAutomate,
+			kMixId
+		);
+		
+		parameters.addParameter(
+			STR16("Compression Type"),
+			nullptr,
+			0,
+			1.0, // Compress
+			Steinberg::Vst::ParameterInfo::kCanAutomate,
+			kCompressionTypeId
+		);
+
+		// apply normalized defaults into parameter container
+		setParamNormalized(kBypassId, 0.0);
+		setParamNormalized(kInputGainId, (400.f - 50.f) / (1000.f - 50.f));
+		setParamNormalized(kReductionId, (400.f - 50.f) / (1000.f - 50.f));
+		setParamNormalized(kMixId, 0.50);
+		setParamNormalized(kOutputGainId, 0.24f / 0.95f);
+		setParamNormalized(kToneId, 0.5);
+		setParamNormalized(kCompressionTypeId, 1.0);
+
+		parameters.getParameter(kBypassId)->setNormalized(0.0);
+		parameters.getParameter(kInputGainId)->setNormalized(
+			(400.f - 50.f) / (1000.f - 50.f)
+		);
+		parameters.getParameter(kReductionId)->setNormalized(
+			(400.f - 50.f) / (1000.f - 50.f)
+		);
+		parameters.getParameter(kMixId)->setNormalized(0.50);
+		parameters.getParameter(kOutputGainId)->setNormalized(0.24f / 0.95f);
+		parameters.getParameter(kToneId)->setNormalized(0.5);
+		parameters.getParameter(kCompressionTypeId)->setNormalized(1.0);
+		
+
+		return kResultOk;
 	}
 
 	//------------------------------------------------------------------------
@@ -48,14 +136,7 @@ namespace MyCompanyName {
 	}
 
 	//------------------------------------------------------------------------
-	tresult PLUGIN_API LA2A_CompressorController::setComponentState(IBStream* state)
-	{
-		// Here you get the state of the component (Processor part)
-		if (!state)
-			return kResultFalse;
-
-		return kResultOk;
-	}
+	
 
 	//------------------------------------------------------------------------
 	tresult PLUGIN_API LA2A_CompressorController::setState(IBStream* state)
@@ -68,10 +149,56 @@ namespace MyCompanyName {
 	//------------------------------------------------------------------------
 	tresult PLUGIN_API LA2A_CompressorController::getState(IBStream* state)
 	{
-		// Here you are asked to deliver the state of the controller (if needed)
-		// Note: the real state of your plug-in is saved in the processor
+		
+			// Called by the host to store the controller state (we write all parameter normalized values)
+			if (!state)
+				return kResultFalse;
 
-		return kResultTrue;
+			IBStreamer streamer(state, kLittleEndian);
+
+			// write number of params, then pairs (id, float normalized)
+			const int32 numParams = kParamCount;
+			if (!streamer.writeInt32(numParams))
+				return kResultFalse;
+
+			auto writeParam = [&](Vst::ParamID id, float normalized) -> bool {
+				if (!streamer.writeInt32(static_cast<int32>(id)))
+					return false;
+				if (!streamer.writeFloat(normalized))
+					return false;
+				return true;
+				};
+
+			// fetch normalized values from parameter objects so we persist exactly what's in controller
+			if (auto* p = parameters.getParameter(kBypassId))
+			{
+				writeParam(kBypassId, static_cast<float>(p->getNormalized()));
+			}
+			else writeParam(kBypassId, bypass ? 1.0f : 0.0f);
+
+			//if (auto* p = parameters.getParameter(kDelayTimeId))
+			//{
+			//	writeParam(kDelayTimeId, static_cast<float>(p->getNormalized()));
+			//}
+			//if (auto* p = parameters.getParameter(kMixId))
+			//{
+			//	writeParam(kMixId, static_cast<float>(p->getNormalized()));
+			//}
+			//if (auto* p = parameters.getParameter(kFeedbackId))
+			//{
+			//	writeParam(kFeedbackId, static_cast<float>(p->getNormalized()));
+			//}
+			//if (auto* p = parameters.getParameter(kToneId))
+			//{
+			//	writeParam(kToneId, static_cast<float>(p->getNormalized()));
+			//}
+			//if (auto* p = parameters.getParameter(kStereoWidthId))
+			//{
+			//	writeParam(kStereoWidthId, static_cast<float>(p->getNormalized()));
+			//}
+
+			return kResultOk;
+		
 	}
 
 	//------------------------------------------------------------------------
@@ -86,6 +213,46 @@ namespace MyCompanyName {
 		}
 		return nullptr;
 	}
+	tresult PLUGIN_API LA2A_CompressorController::setComponentState(IBStream* state)
+	{
+		// Host may call this to restore component/processor state into the controller (UI)
+		if (!state)
+			return kResultFalse;
+
+		IBStreamer streamer(state, kLittleEndian);
+
+		int32 firstInt = 0;
+		if (!streamer.readInt32(firstInt))
+			return kResultFalse;
+
+		// If old format (single savedBypass written by older code), firstInt will be 0/1.
+		// If new format, firstInt == number of parameter entries.
+		if (firstInt == kParamCount)
+		{
+			const int32 numParams = firstInt;
+			for (int32 i = 0; i < numParams; ++i)
+			{
+				int32 id = 0;
+				float val = 0.f;
+				if (!streamer.readInt32(id))
+					continue;
+				if (!streamer.readFloat(val))
+					continue;
+
+				// Update controller parameter (this will notify UI)
+				setParamNormalized(static_cast<Vst::ParamID>(id), static_cast<Vst::ParamValue>(val));
+			}
+			return kResultOk;
+		}
+		else
+		{
+			// Legacy: treat firstInt as savedBypass
+			int32 savedBypass = firstInt;
+			bypass = (savedBypass != 0);
+			setParamNormalized(kBypassId, bypass ? 1.0 : 0.0);
+			return kResultOk;
+		}
+	}
 
 	tresult PLUGIN_API LA2A_CompressorController::setParamNormalized(
 		Steinberg::Vst::ParamID tag,
@@ -94,7 +261,7 @@ namespace MyCompanyName {
 		if (tag == kBypassId)
 		{
 			// maintain local copy for quick access
-			//bypass = (value >= 0.5);
+			bypass = (value >= 0.5);
 
 			// Let the base class actually set the parameter value/store it and notify listeners.
 			return EditControllerEx1::setParamNormalized(tag, value);
@@ -112,11 +279,11 @@ namespace MyCompanyName {
 
 		char buf[128] = { 0 };
 
-		//switch (tag)
+		switch (tag)
 		{
-			//case kBypassId:
-			//	snprintf(buf, sizeof(buf), "%s", (valueNormalized >= 0.5) ? "On" : "Off");
-			//	break;
+			case kBypassId:
+				snprintf(buf, sizeof(buf), "%s", (valueNormalized >= 0.5) ? "On" : "Off");
+				break;
 
 			//case kDelayTimeId:
 			//{
