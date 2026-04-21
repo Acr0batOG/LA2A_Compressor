@@ -16,3 +16,4 @@ build/WIN_PDB64/
 build/vst3sdk/
 build/.vs/
 build/CMakeCache.txt
+build/ALL_BUILD.dir/
