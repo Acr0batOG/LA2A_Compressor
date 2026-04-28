@@ -2,6 +2,6 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <LocalDebuggerCommandArgumentsHistory>--pluginfolder "C:\Users\RSmith\VST_Outputs\LA2A_Compressor\build\VST3\Debug\LA2A_Compressor.vst3\Contents\x86_64-win\/"|--pluginfolder "C:\Users\RSmith\VSTPlugins\LA2A_Compressor\build\VST3\Debug\LA2A_Compressor.vst3\Contents\x86_64-win\/"|--pluginfolder "C:\Users\grhys\VSTPlugins\LA2A_Compressor\build\VST3\Debug\LA2A_Compressor.vst3\Contents\x86_64-win\/"|</LocalDebuggerCommandArgumentsHistory>
+    <LocalDebuggerCommandArgumentsHistory>--pluginfolder "C:\Users\RSmith\VST_Outputs\LA2A_Compressor\build\VST3\Debug\LA2A_Compressor.vst3\Contents\x86_64-win\/"|--pluginfolder "C:\Users\grhys\VSTPlugins\LA2A_Compressor\build\VST3\Debug\LA2A_Compressor.vst3\Contents\x86_64-win\/"|--pluginfolder "C:\Users\RSmith\VSTPlugins\LA2A_Compressor\build\VST3\Debug\LA2A_Compressor.vst3\Contents\x86_64-win\/"|</LocalDebuggerCommandArgumentsHistory>
   </PropertyGroup>
 </Project>

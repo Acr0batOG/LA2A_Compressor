@@ -359,7 +359,7 @@ namespace MyCompanyName {
             //----------------------------------------------------------------
             sigL *= gainLinear;
             sigR *= gainLinear;
-
+             
             //----------------------------------------------------------------
             // G. Harmonic saturation — transformer / tube coloring
             //    The LA-2A's transformer and tube output stage add warmth
