@@ -34,7 +34,7 @@ namespace MyCompanyName {
 			STR16("Bypass"),
 			nullptr,
 			2,          // two steps: off/on
-			0.0,        // default = OFF
+			0.0,        // default = No Bypass (Effect On)
 			Steinberg::Vst::ParameterInfo::kCanAutomate |
 			Steinberg::Vst::ParameterInfo::kIsBypass,
 			kBypassId
@@ -45,7 +45,7 @@ namespace MyCompanyName {
 			STR16("Input Gain"),
 			STR16("dB"),
 			0, // continuous
-			(400.0f - 50.0f) / (1000.0f - 50.0f),
+			.5, //Normalized from 0 - 1 will be changed by the UI knob
 			Steinberg::Vst::ParameterInfo::kCanAutomate,
 			kInputGainId
 		);
@@ -54,20 +54,17 @@ namespace MyCompanyName {
 			STR16("Reduction"),
 			STR16("dB"),
 			0, // continuous
-			(400.0f - 50.0f) / (1000.0f - 50.0f),
+			0.0, // default value will be 0 but this is only for the VU meter, will be updated in real time
 			Steinberg::Vst::ParameterInfo::kCanAutomate,
 			kReductionId
 		);
 
 		
-
-		// Feedback: stored normalized (0..1) maps to actual feedback = normalized * 0.95
-		// default actual ~24% -> store normalized = 0.24 / 0.95
 		parameters.addParameter(
 			STR16("Output Gain"),
 			STR16("dB"),
 			0,
-			0.24f / 0.95f,
+			0.5, //Default value should be .5 normalized but changed by the output knob
 			Steinberg::Vst::ParameterInfo::kCanAutomate,
 			kOutputGainId
 		);
@@ -77,7 +74,7 @@ namespace MyCompanyName {
 			STR16("Tone"),
 			nullptr,
 			0,
-			0.5,
+			0.5, // default (no eq applied)
 			Steinberg::Vst::ParameterInfo::kCanAutomate,
 			kToneId
 		);
@@ -87,7 +84,7 @@ namespace MyCompanyName {
 			STR16("Mix"),
 			nullptr,
 			0,
-			0.50, // default (50%)
+			1.0, // default (100%, no parallel but can change)
 			Steinberg::Vst::ParameterInfo::kCanAutomate,
 			kMixId
 		);
@@ -103,22 +100,18 @@ namespace MyCompanyName {
 
 		// apply normalized defaults into parameter container
 		setParamNormalized(kBypassId, 0.0);
-		setParamNormalized(kInputGainId, (400.f - 50.f) / (1000.f - 50.f));
-		setParamNormalized(kReductionId, (400.f - 50.f) / (1000.f - 50.f));
-		setParamNormalized(kMixId, 0.50);
-		setParamNormalized(kOutputGainId, 0.24f / 0.95f);
+		setParamNormalized(kInputGainId, 0.5);
+		setParamNormalized(kReductionId, 0.0);
+		setParamNormalized(kMixId, 1.0);
+		setParamNormalized(kOutputGainId, 0.5);
 		setParamNormalized(kToneId, 0.5);
 		setParamNormalized(kCompressionTypeId, 1.0);
 
 		parameters.getParameter(kBypassId)->setNormalized(0.0);
-		parameters.getParameter(kInputGainId)->setNormalized(
-			(400.f - 50.f) / (1000.f - 50.f)
-		);
-		parameters.getParameter(kReductionId)->setNormalized(
-			(400.f - 50.f) / (1000.f - 50.f)
-		);
-		parameters.getParameter(kMixId)->setNormalized(0.50);
-		parameters.getParameter(kOutputGainId)->setNormalized(0.24f / 0.95f);
+		parameters.getParameter(kInputGainId)->setNormalized(0.5);
+		parameters.getParameter(kReductionId)->setNormalized(0.0);
+		parameters.getParameter(kMixId)->setNormalized(1.0);
+		parameters.getParameter(kOutputGainId)->setNormalized(0.5);
 		parameters.getParameter(kToneId)->setNormalized(0.5);
 		parameters.getParameter(kCompressionTypeId)->setNormalized(1.0);
 		

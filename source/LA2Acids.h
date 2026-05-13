@@ -23,7 +23,8 @@ enum ParamIDs : Steinberg::Vst::ParamID
 	kReductionId,    // 0–100% aka peak reduction
 	kOutputGainId,         // 0–100%
 	kToneId,     // Tone (0–1, tilt EQ)
-	kMixId,	  // 0–100% wet/dry mix
+	kMixId,	  // 0–100% wet/dry mix,
+	kHighPassId, //High pass filter
 
 	kCompressionTypeId, // Limit, or compress (0 or 1)
 

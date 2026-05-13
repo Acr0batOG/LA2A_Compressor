@@ -199,6 +199,12 @@ namespace MyCompanyName {
                         case kBypassId:
                             bypass = (value > 0.5);
                             break;
+                        case kHighPassId:
+                            sidechainHPF_Hz = 20.0f + static_cast<float>(value) * (200.0f - 20.0f); // Map 0–1 to 20–200 Hz
+                            // Recompute HPF coeff immediately when changed
+                            sidechainHPF_coeff = expf(-2.0f * static_cast<float>(M_PI) * sidechainHPF_Hz
+                                / static_cast<float>(sampleRate));
+                            break;
                         default:
                             break;
                         }
@@ -457,6 +463,7 @@ namespace MyCompanyName {
         streamer.writeFloat(mix);
         streamer.writeFloat(tone);
 		streamer.writeFloat(compressionType);
+		streamer.writeFloat(sidechainHPF_Hz);
         streamer.writeInt32(bypass ? 1 : 0);
 
         return kResultOk;
