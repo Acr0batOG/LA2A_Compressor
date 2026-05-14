@@ -45,7 +45,7 @@ namespace MyCompanyName {
 			STR16("Input Gain"),
 			STR16("dB"),
 			0, // continuous
-			.5, //Normalized from 0 - 1 will be changed by the UI knob
+			.25, //Normalized from 0 - 1 will be changed by the UI knob
 			Steinberg::Vst::ParameterInfo::kCanAutomate,
 			kInputGainId
 		);
@@ -54,7 +54,7 @@ namespace MyCompanyName {
 			STR16("Reduction"),
 			STR16("dB"),
 			0, // continuous
-			0.0, // default value will be 0 but this is only for the VU meter, will be updated in real time
+			0.0, // 0 default value but choose with UI meter (0, +10, +4)
 			Steinberg::Vst::ParameterInfo::kCanAutomate,
 			kReductionId
 		);
@@ -64,7 +64,7 @@ namespace MyCompanyName {
 			STR16("Output Gain"),
 			STR16("dB"),
 			0,
-			0.5, //Default value should be .5 normalized but changed by the output knob
+			0.25, //Default value should be .5 normalized but changed by the output knob
 			Steinberg::Vst::ParameterInfo::kCanAutomate,
 			kOutputGainId
 		);
@@ -97,23 +97,43 @@ namespace MyCompanyName {
 			Steinberg::Vst::ParameterInfo::kCanAutomate,
 			kCompressionTypeId
 		);
+		parameters.addParameter(
+			STR16("VU Meter"),
+			STR16("dB"),
+			0, // continuous
+			0.0, // 0 but change in real time with VU meter
+			Steinberg::Vst::ParameterInfo::kCanAutomate,
+			kVUId
+		);
+		parameters.addParameter(
+			STR16("High Pass Filter"),
+			nullptr,
+			0,
+			0.0, // default (100%, no parallel but can change)
+			Steinberg::Vst::ParameterInfo::kCanAutomate,
+			kHighPassId
+		);
 
 		// apply normalized defaults into parameter container
 		setParamNormalized(kBypassId, 0.0);
-		setParamNormalized(kInputGainId, 0.5);
+		setParamNormalized(kInputGainId, 0.25);
 		setParamNormalized(kReductionId, 0.0);
 		setParamNormalized(kMixId, 1.0);
-		setParamNormalized(kOutputGainId, 0.5);
+		setParamNormalized(kOutputGainId, 0.25);
 		setParamNormalized(kToneId, 0.5);
 		setParamNormalized(kCompressionTypeId, 1.0);
+		setParamNormalized(kVUId, 0.0);
+		setParamNormalized(kHighPassId, 0.0);
 
 		parameters.getParameter(kBypassId)->setNormalized(0.0);
-		parameters.getParameter(kInputGainId)->setNormalized(0.5);
+		parameters.getParameter(kInputGainId)->setNormalized(0.25);
 		parameters.getParameter(kReductionId)->setNormalized(0.0);
 		parameters.getParameter(kMixId)->setNormalized(1.0);
-		parameters.getParameter(kOutputGainId)->setNormalized(0.5);
+		parameters.getParameter(kOutputGainId)->setNormalized(0.25);
 		parameters.getParameter(kToneId)->setNormalized(0.5);
 		parameters.getParameter(kCompressionTypeId)->setNormalized(1.0);
+		parameters.getParameter(kVUId)->setNormalized(0.0);
+		parameters.getParameter(kHighPassId)->setNormalized(0.0);
 		
 
 		return kResultOk;
@@ -163,32 +183,59 @@ namespace MyCompanyName {
 				};
 
 			// fetch normalized values from parameter objects so we persist exactly what's in controller
+			// Also set defaults in case it cannot fetch
 			if (auto* p = parameters.getParameter(kBypassId))
 			{
 				writeParam(kBypassId, static_cast<float>(p->getNormalized()));
 			}
 			else writeParam(kBypassId, bypass ? 1.0f : 0.0f);
 
-			//if (auto* p = parameters.getParameter(kDelayTimeId))
-			//{
-			//	writeParam(kDelayTimeId, static_cast<float>(p->getNormalized()));
-			//}
-			//if (auto* p = parameters.getParameter(kMixId))
-			//{
-			//	writeParam(kMixId, static_cast<float>(p->getNormalized()));
-			//}
-			//if (auto* p = parameters.getParameter(kFeedbackId))
-			//{
-			//	writeParam(kFeedbackId, static_cast<float>(p->getNormalized()));
-			//}
-			//if (auto* p = parameters.getParameter(kToneId))
-			//{
-			//	writeParam(kToneId, static_cast<float>(p->getNormalized()));
-			//}
-			//if (auto* p = parameters.getParameter(kStereoWidthId))
-			//{
-			//	writeParam(kStereoWidthId, static_cast<float>(p->getNormalized()));
-			//}
+			if (auto* p = parameters.getParameter(kInputGainId))
+			{
+				writeParam(kInputGainId, static_cast<float>(p->getNormalized()));
+			}
+			else writeParam(kInputGainId, 0.25f);
+
+			if (auto* p = parameters.getParameter(kMixId))
+			{
+				writeParam(kMixId, static_cast<float>(p->getNormalized()));
+			}
+			else writeParam(kMixId, 1.0f);
+
+			if (auto* p = parameters.getParameter(kReductionId))
+			{
+				writeParam(kReductionId, static_cast<float>(p->getNormalized()));
+			}else writeParam(kReductionId, 0.0f);
+
+			if (auto* p = parameters.getParameter(kOutputGainId))
+			{
+				writeParam(kOutputGainId, static_cast<float>(p->getNormalized()));
+			}
+			else writeParam(kOutputGainId, 0.25f);
+
+			if (auto* p = parameters.getParameter(kToneId))
+			{
+				writeParam(kToneId, static_cast<float>(p->getNormalized()));
+			}
+			else writeParam(kToneId, 0.5f);
+
+			if (auto* p = parameters.getParameter(kCompressionTypeId))
+			{
+				writeParam(kCompressionTypeId, static_cast<float>(p->getNormalized()));
+			}
+			else writeParam(kCompressionTypeId, 1.0f);
+
+			if (auto* p = parameters.getParameter(kVUId))
+			{
+				writeParam(kVUId, static_cast<float>(p->getNormalized()));
+			}
+			else writeParam(kVUId, 0.0f);
+
+			if (auto* p = parameters.getParameter(kHighPassId))
+			{
+				writeParam(kHighPassId, static_cast<float>(p->getNormalized()));
+			}
+			else writeParam(kHighPassId, 0.0f);
 
 			return kResultOk;
 		
@@ -277,81 +324,98 @@ namespace MyCompanyName {
 			case kBypassId:
 				snprintf(buf, sizeof(buf), "%s", (valueNormalized >= 0.5) ? "On" : "Off");
 				break;
+			
+			case kInputGainId:
+			{
+				int pct = static_cast<int>(std::round(valueNormalized * 100.0));
+				snprintf(buf, sizeof(buf), "%d%%", pct);
+				break;
+			}
+			// This is the meter, gonna take some work
+			case kReductionId:
+			{
+				// Tone 0-20% Darker, 21-40% Dark, 41-60% Neutral, 61-80% Bright, 81-100% Brighter
+				int pct = static_cast<int>(std::round(valueNormalized * 100.0));
+				int idx = 0;
+				const char* labels[3] = {"Output +10", "Gain Reduction", "Output +4"};
+				if (pct <= 33)
+					idx = 0;
+				else if (pct <= 67)
+					idx = 1;
+				else
+					idx = 2;
+				snprintf(buf, sizeof(buf), "%s", labels[idx]);
+				break;
+			}
+			case kOutputGainId:
+			{
+				int pct = static_cast<int>(std::round(valueNormalized * 100.0));
+				snprintf(buf, sizeof(buf), "%d%%", pct);
+				break;
+			}
 
-			//case kDelayTimeId:
-			//{
-			//	// Map normalized -> ms using same mapping as processor: 50..1000 ms
-			//	const float ms = 50.0f + static_cast<float>(valueNormalized) * (1000.0f - 50.0f);
-			//	// Show integer ms
-			//	snprintf(buf, sizeof(buf), "%.0f ms", std::round(ms));
-			//	break;
-			//}
+			case kMixId:
+			{
+				int pct = static_cast<int>(std::round(valueNormalized * 100.0));
+				snprintf(buf, sizeof(buf), "%d%%", pct);
+				break;
+			}
 
-			//case kMixId:
-			//{
-			//	// Mix is 0..1 wet gain relative to dry. Display percent 0..100%
-			//	int pct = static_cast<int>(std::round(valueNormalized * 100.0));
-			//	snprintf(buf, sizeof(buf), "%d%%", pct);
-			//	break;
-			//}
+			case kToneId:
+			{
+				// Tone 0-20% Darker, 21-40% Dark, 41-60% Neutral, 61-80% Bright, 81-100% Brighter
+				int pct = static_cast<int>(std::round(valueNormalized * 100.0));
+				int idx = 0;
+				const char* labels[3] = {"Dark", "Neutral", "Bright"};
+				if (pct <= 33)
+					idx = 0;
+				else if (pct <= 67)
+					idx = 1;
+				else
+					idx = 2;
+				snprintf(buf, sizeof(buf), "%s", labels[idx]);
+				break;
+			}
+			case kHighPassId:
+			{
+				int hz = 20.0f + static_cast<float>(valueNormalized) * (200.0f - 20.0f);
+				snprintf(buf, sizeof(buf), "%d%%", hz);
+				break;
+			}
+			case kVUId:
+			{
+				// Not actual text, need to find how to select frames based on this code
+				// VU Meter: 0-20% Green, 21-40% Yellow, 41-60% Orange, 61-80% Red, 81-100% Clipping
+				int pct = static_cast<int>(std::round(valueNormalized * 100.0));
+				int idx = 0;
+				const char* labels[5] = { "Green", "Yellow", "Orange", "Red", "Clipping" };
+				if (pct <= 20)
+					idx = 0;
+				else if (pct <= 40)
+					idx = 1;
+				else if (pct <= 60)
+					idx = 2;
+				else if (pct <= 80)
+					idx = 3;
+				else
+					idx = 4;
+				snprintf(buf, sizeof(buf), "%s", labels[idx]);
+				break;
+			}
+			case kCompressionTypeId:
+				snprintf(buf, sizeof(buf), "%s", (valueNormalized >= 0.5) ? "Compress" : "Limit");
+				break;
 
-			//case kFeedbackId:
-			//{
-			//	// stored normalized maps to actual feedback = value * 0.9
-			//	float fb = static_cast<float>(valueNormalized) * 1.0f;
-			//	int pct = static_cast<int>(std::round(fb * 100.0f));
-			//	snprintf(buf, sizeof(buf), "%d%%", pct);
-			//	break;
-			//}
-
-			//case kToneId:
-			//{
-			//	// Tone 0-20% Darker, 21-40% Dark, 41-60% Neutral, 61-80% Bright, 81-100% Brighter
-			//	int pct = static_cast<int>(std::round(valueNormalized * 100.0));
-			//	int idx = 0;
-			//	const char* labels[5] = { "Darker", "Dark", "Neutral", "Bright", "Brighter" };
-			//	if (pct <= 20)
-			//		idx = 0;
-			//	else if (pct <= 40)
-			//		idx = 1;
-			//	else if (pct <= 60)
-			//		idx = 2;
-			//	else if (pct <= 80)
-			//		idx = 3;
-			//	else
-			//		idx = 4;
-			//	snprintf(buf, sizeof(buf), "%s", labels[idx]);
-			//	break;
-			//}
-
-			//case kStereoWidthId:
-			//{
-			//	// Tone 0-20% Darker, 21-40% Dark, 41-60% Neutral, 61-80% Bright, 81-100% Brighter
-			//	int pct = static_cast<int>(std::round(valueNormalized * 100.0));
-			//	int idx = 0;
-			//	const char* labels[4] = { "Mono", "Narrow", "Stereo", "Wide" };
-			//	if (pct <= 10.0f)
-			//		idx = 0;
-			//	else if (pct <= 36.0f)
-			//		idx = 1;
-			//	else if (pct <= 80.0f)
-			//		idx = 2;
-			//	else
-			//		idx = 3;
-			//	snprintf(buf, sizeof(buf), "%s", labels[idx]);
-			//	break;
-			//}
-
-			//default:
-			//	// fall back to base class formatting (numbers, etc.)
-			//	return EditControllerEx1::getParamStringByValue(tag, valueNormalized, string);
-			//}
+			default:
+				// fall back to base class formatting (numbers, etc.)
+				return EditControllerEx1::getParamStringByValue(tag, valueNormalized, string);
+			
 
 
-			//// Use UString128 to convert ASCII/UTF-8 into SDK TChar buffer safely
-			//Steinberg::UString128 ustr;
-			//ustr.fromAscii(buf);
-			//ustr.copyTo(string, 128);
+			// Use UString128 to convert ASCII/UTF-8 into SDK TChar buffer safely
+			Steinberg::UString128 ustr;
+			ustr.fromAscii(buf);
+			ustr.copyTo(string, 128);
 
 			return kResultTrue;
 		}

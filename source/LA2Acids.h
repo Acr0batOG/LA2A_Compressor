@@ -20,11 +20,12 @@ enum ParamIDs : Steinberg::Vst::ParamID
 	kBypassId,
 
 	kInputGainId,   //  0–100% input gain, first knob being used
-	kReductionId,    // 0–100% aka peak reduction
+	kReductionId,    // 0Db, +10Db or +4Db
 	kOutputGainId,         // 0–100%
 	kToneId,     // Tone (0–1, tilt EQ)
 	kMixId,	  // 0–100% wet/dry mix,
 	kHighPassId, //High pass filter
+	kVUId, // VU Meter (not a real parameter, just for display)
 
 	kCompressionTypeId, // Limit, or compress (0 or 1)
 
