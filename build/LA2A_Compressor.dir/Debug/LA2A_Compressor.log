@@ -3,8 +3,15 @@
   Generating VST3/Debug/LA2A_Compressor.vst3/Contents/Resources/Snapshots/3E2117D28482586B8A7C0F0AD3C3EDC3_snapshot_2.0x.png
   [SMTG] Copied C:/Users/grhys/VSTPlugins/LA2A_Compressor/resource/3E2117D28482586B8A7C0F0AD3C3EDC3_snapshot_2.0x.png to C:/Users/grhys/VSTPlugins/LA2A_Compressor/build/VST3/Debug/LA2A_Compressor.vst3/Contents/Resources/Snapshots/3E2117D28482586B8A7C0F0AD3C3EDC3_snapshot_2.0x.png
   LA2Acontroller.cpp
-C:\Users\grhys\VSTPlugins\LA2A_Compressor\source\LA2Acontroller.cpp(363,1): warning C4702: unreachable code
-C:\Users\grhys\VSTPlugins\LA2A_Compressor\source\LA2Acontroller.cpp(367,1): warning C4715: 'MyCompanyName::LA2A_CompressorController::getParamStringByValue': not all control paths return a value
+  LA2Aentry.cpp
+  LA2Aprocessor.cpp
+C:\Users\grhys\VST_SDK\vst3sdk\vstgui4\vstgui\lib\cviewcontainer.h(180,7): warning C4996: 'VSTGUI::CView::onWheel': Use CView::onMouseWheelEvent instead
+  (compiling source file '../source/LA2Acontroller.cpp')
+  
+C:\Users\grhys\VST_SDK\vst3sdk\vstgui4\vstgui\lib\controls\ctextlabel.h(69,7): warning C4996: 'VSTGUI::CView::onWheel': Use CView::onMouseWheelEvent instead
+  (compiling source file '../source/LA2Acontroller.cpp')
+  
+     Creating library C:/Users/grhys/VSTPlugins/LA2A_Compressor/build/lib/Debug/LA2A_Compressor.lib and object C:/Users/grhys/VSTPlugins/LA2A_Compressor/build/lib/Debug/LA2A_Compressor.exp
   LA2A_Compressor.vcxproj -> C:\Users\grhys\VSTPlugins\LA2A_Compressor\build\VST3\Debug\LA2A_Compressor.vst3\Contents\x86_64-win\LA2A_Compressor.vst3
   [SMTG] Copy PlugIn.ico and desktop.ini and change their attributes.			
   [SMTG] Validator started...
@@ -72,14 +79,16 @@ C:\Users\grhys\VSTPlugins\LA2A_Compressor\source\LA2Acontroller.cpp(367,1): warn
   
   [Scan Parameters]
   Info:  ===Scan Parameters ====================================
-  Info:  This component exports 7 parameter(s)
+  Info:  This component exports 9 parameter(s)
   Info:     Parameter 000 (id=0): [title="Bypass"] [unit=""] [type = Discrete, default = 0.000000, unit = 0]
-  Info:     Parameter 001 (id=1): [title="Input Gain"] [unit="dB"] [type = Float, default = 0.368421, unit = 0]
-  Info:     Parameter 002 (id=2): [title="Reduction"] [unit="dB"] [type = Float, default = 0.368421, unit = 0]
-  Info:     Parameter 003 (id=3): [title="Output Gain"] [unit="dB"] [type = Float, default = 0.252632, unit = 0]
+  Info:     Parameter 001 (id=1): [title="Input Gain"] [unit="dB"] [type = Float, default = 0.250000, unit = 0]
+  Info:     Parameter 002 (id=2): [title="Reduction"] [unit="dB"] [type = Float, default = 0.000000, unit = 0]
+  Info:     Parameter 003 (id=3): [title="Output Gain"] [unit="dB"] [type = Float, default = 0.250000, unit = 0]
   Info:     Parameter 004 (id=4): [title="Tone"] [unit=""] [type = Float, default = 0.500000, unit = 0]
-  Info:     Parameter 005 (id=5): [title="Mix"] [unit=""] [type = Float, default = 0.500000, unit = 0]
-  Info:     Parameter 006 (id=6): [title="Compression Type"] [unit=""] [type = Float, default = 1.000000, unit = 0]
+  Info:     Parameter 005 (id=5): [title="Mix"] [unit=""] [type = Float, default = 1.000000, unit = 0]
+  Info:     Parameter 006 (id=8): [title="Compression Type"] [unit=""] [type = Float, default = 1.000000, unit = 0]
+  Info:     Parameter 007 (id=7): [title="VU Meter"] [unit="dB"] [type = Float, default = 0.000000, unit = 0]
+  Info:     Parameter 008 (id=6): [title="High Pass Filter"] [unit="Hz"] [type = Float, default = 0.000000, unit = 0]
   [Succeeded]
   
   [MIDI Mapping]

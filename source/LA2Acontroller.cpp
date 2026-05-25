@@ -23,11 +23,9 @@ namespace MyCompanyName {
 	{
 		tresult result = EditControllerEx1::initialize(context);
 		if (result != kResultOk)
-		{
 			return result;
-		}
 
-		// --- Register parameters here ---
+		// --- Register parameters ---
 
 		// Bypass: discrete 0/1
 		parameters.addParameter(
@@ -40,81 +38,85 @@ namespace MyCompanyName {
 			kBypassId
 		);
 
-		
 		parameters.addParameter(
 			STR16("Input Gain"),
 			STR16("dB"),
-			0, // continuous
-			.25, //Normalized from 0 - 1 will be changed by the UI knob
+			0,
+			0.25,
 			Steinberg::Vst::ParameterInfo::kCanAutomate,
 			kInputGainId
 		);
 
+		// Reduction: three-position (0 = 0dB, ~0.5 = +4dB, 1.0 = +10dB)
 		parameters.addParameter(
 			STR16("Reduction"),
 			STR16("dB"),
-			0, // continuous
-			0.0, // 0 default value but choose with UI meter (0, +10, +4)
+			0,
+			0.0,
 			Steinberg::Vst::ParameterInfo::kCanAutomate,
 			kReductionId
 		);
 
-		
 		parameters.addParameter(
 			STR16("Output Gain"),
 			STR16("dB"),
 			0,
-			0.25, //Default value should be .5 normalized but changed by the output knob
+			0.25,
 			Steinberg::Vst::ParameterInfo::kCanAutomate,
 			kOutputGainId
 		);
 
-		// Tone: normalized [0..1], controller default 0.5 (center)
+		// Tone: 0 = dark (600 Hz boost), 0.5 = flat, 1 = bright (2200 Hz boost)
 		parameters.addParameter(
 			STR16("Tone"),
 			nullptr,
 			0,
-			0.5, // default (no eq applied)
+			0.5,
 			Steinberg::Vst::ParameterInfo::kCanAutomate,
 			kToneId
 		);
 
-		// Mix: 0..1
+		// Mix: 0 = 100% dry, 1 = 100% wet (full compression)
 		parameters.addParameter(
 			STR16("Mix"),
 			nullptr,
 			0,
-			1.0, // default (100%, no parallel but can change)
+			1.0,
 			Steinberg::Vst::ParameterInfo::kCanAutomate,
 			kMixId
 		);
-		
+
+		// Compression Type: 0 = Limit, 1 = Compress
 		parameters.addParameter(
 			STR16("Compression Type"),
 			nullptr,
 			0,
-			1.0, // Compress
+			1.0,
 			Steinberg::Vst::ParameterInfo::kCanAutomate,
 			kCompressionTypeId
 		);
+
+		// VU Meter: read-only, driven by processor via outputParameterChanges
 		parameters.addParameter(
 			STR16("VU Meter"),
 			STR16("dB"),
-			0, // continuous
-			0.0, // 0 but change in real time with VU meter
-			Steinberg::Vst::ParameterInfo::kCanAutomate,
+			0,
+			0.0,
+			Steinberg::Vst::ParameterInfo::kIsReadOnly,  // user cannot change this
 			kVUId
 		);
+
+		// High Pass Filter: 0–1 maps to 20–200 Hz on the sidechain detector
 		parameters.addParameter(
 			STR16("High Pass Filter"),
-			nullptr,
+			STR16("Hz"),
 			0,
-			0.0, // default (100%, no parallel but can change)
+			0.0,
 			Steinberg::Vst::ParameterInfo::kCanAutomate,
 			kHighPassId
 		);
 
-		// apply normalized defaults into parameter container
+		// Apply normalized defaults
 		setParamNormalized(kBypassId, 0.0);
 		setParamNormalized(kInputGainId, 0.25);
 		setParamNormalized(kReductionId, 0.0);
@@ -125,137 +127,69 @@ namespace MyCompanyName {
 		setParamNormalized(kVUId, 0.0);
 		setParamNormalized(kHighPassId, 0.0);
 
-		parameters.getParameter(kBypassId)->setNormalized(0.0);
-		parameters.getParameter(kInputGainId)->setNormalized(0.25);
-		parameters.getParameter(kReductionId)->setNormalized(0.0);
-		parameters.getParameter(kMixId)->setNormalized(1.0);
-		parameters.getParameter(kOutputGainId)->setNormalized(0.25);
-		parameters.getParameter(kToneId)->setNormalized(0.5);
-		parameters.getParameter(kCompressionTypeId)->setNormalized(1.0);
-		parameters.getParameter(kVUId)->setNormalized(0.0);
-		parameters.getParameter(kHighPassId)->setNormalized(0.0);
-		
-
 		return kResultOk;
 	}
 
 	//------------------------------------------------------------------------
 	tresult PLUGIN_API LA2A_CompressorController::terminate()
 	{
-		// Here the Plug-in will be de-instantiated, last possibility to remove some memory!
-
-		//---do not forget to call parent ------
 		return EditControllerEx1::terminate();
 	}
 
 	//------------------------------------------------------------------------
-	
-
-	//------------------------------------------------------------------------
 	tresult PLUGIN_API LA2A_CompressorController::setState(IBStream* state)
 	{
-		// Here you get the state of the controller
-
 		return kResultTrue;
 	}
 
 	//------------------------------------------------------------------------
 	tresult PLUGIN_API LA2A_CompressorController::getState(IBStream* state)
 	{
-		
-			// Called by the host to store the controller state (we write all parameter normalized values)
-			if (!state)
-				return kResultFalse;
+		if (!state)
+			return kResultFalse;
 
-			IBStreamer streamer(state, kLittleEndian);
+		IBStreamer streamer(state, kLittleEndian);
 
-			// write number of params, then pairs (id, float normalized)
-			const int32 numParams = kParamCount;
-			if (!streamer.writeInt32(numParams))
-				return kResultFalse;
+		const int32 numParams = kParamCount;
+		if (!streamer.writeInt32(numParams))
+			return kResultFalse;
 
-			auto writeParam = [&](Vst::ParamID id, float normalized) -> bool {
-				if (!streamer.writeInt32(static_cast<int32>(id)))
-					return false;
-				if (!streamer.writeFloat(normalized))
-					return false;
-				return true;
-				};
+		auto writeParam = [&](Vst::ParamID id, float fallback) -> bool {
+			if (!streamer.writeInt32(static_cast<int32>(id)))
+				return false;
+			float val = fallback;
+			if (auto* p = parameters.getParameter(id))
+				val = static_cast<float>(p->getNormalized());
+			return streamer.writeFloat(val);
+			};
 
-			// fetch normalized values from parameter objects so we persist exactly what's in controller
-			// Also set defaults in case it cannot fetch
-			if (auto* p = parameters.getParameter(kBypassId))
-			{
-				writeParam(kBypassId, static_cast<float>(p->getNormalized()));
-			}
-			else writeParam(kBypassId, bypass ? 1.0f : 0.0f);
+		writeParam(kBypassId, bypass ? 1.0f : 0.0f);
+		writeParam(kInputGainId, 0.25f);
+		writeParam(kMixId, 1.0f);
+		writeParam(kReductionId, 0.0f);
+		writeParam(kOutputGainId, 0.25f);
+		writeParam(kToneId, 0.5f);
+		writeParam(kCompressionTypeId, 1.0f);
+		writeParam(kVUId, 0.0f);
+		writeParam(kHighPassId, 0.0f);
 
-			if (auto* p = parameters.getParameter(kInputGainId))
-			{
-				writeParam(kInputGainId, static_cast<float>(p->getNormalized()));
-			}
-			else writeParam(kInputGainId, 0.25f);
-
-			if (auto* p = parameters.getParameter(kMixId))
-			{
-				writeParam(kMixId, static_cast<float>(p->getNormalized()));
-			}
-			else writeParam(kMixId, 1.0f);
-
-			if (auto* p = parameters.getParameter(kReductionId))
-			{
-				writeParam(kReductionId, static_cast<float>(p->getNormalized()));
-			}else writeParam(kReductionId, 0.0f);
-
-			if (auto* p = parameters.getParameter(kOutputGainId))
-			{
-				writeParam(kOutputGainId, static_cast<float>(p->getNormalized()));
-			}
-			else writeParam(kOutputGainId, 0.25f);
-
-			if (auto* p = parameters.getParameter(kToneId))
-			{
-				writeParam(kToneId, static_cast<float>(p->getNormalized()));
-			}
-			else writeParam(kToneId, 0.5f);
-
-			if (auto* p = parameters.getParameter(kCompressionTypeId))
-			{
-				writeParam(kCompressionTypeId, static_cast<float>(p->getNormalized()));
-			}
-			else writeParam(kCompressionTypeId, 1.0f);
-
-			if (auto* p = parameters.getParameter(kVUId))
-			{
-				writeParam(kVUId, static_cast<float>(p->getNormalized()));
-			}
-			else writeParam(kVUId, 0.0f);
-
-			if (auto* p = parameters.getParameter(kHighPassId))
-			{
-				writeParam(kHighPassId, static_cast<float>(p->getNormalized()));
-			}
-			else writeParam(kHighPassId, 0.0f);
-
-			return kResultOk;
-		
+		return kResultOk;
 	}
 
 	//------------------------------------------------------------------------
 	IPlugView* PLUGIN_API LA2A_CompressorController::createView(FIDString name)
 	{
-		// Here the Host wants to open your editor (if you have one)
 		if (FIDStringsEqual(name, Vst::ViewType::kEditor))
 		{
-			// create your editor here and return a IPlugView ptr of it
 			auto* view = new VSTGUI::VST3Editor(this, "view", "LA2Aeditor.uidesc");
 			return view;
 		}
 		return nullptr;
 	}
+
+	//------------------------------------------------------------------------
 	tresult PLUGIN_API LA2A_CompressorController::setComponentState(IBStream* state)
 	{
-		// Host may call this to restore component/processor state into the controller (UI)
 		if (!state)
 			return kResultFalse;
 
@@ -265,52 +199,43 @@ namespace MyCompanyName {
 		if (!streamer.readInt32(firstInt))
 			return kResultFalse;
 
-		// If old format (single savedBypass written by older code), firstInt will be 0/1.
-		// If new format, firstInt == number of parameter entries.
 		if (firstInt == kParamCount)
 		{
-			const int32 numParams = firstInt;
-			for (int32 i = 0; i < numParams; ++i)
+			// New format: (id, float) pairs
+			for (int32 i = 0; i < firstInt; ++i)
 			{
 				int32 id = 0;
 				float val = 0.f;
-				if (!streamer.readInt32(id))
-					continue;
-				if (!streamer.readFloat(val))
-					continue;
-
-				// Update controller parameter (this will notify UI)
-				setParamNormalized(static_cast<Vst::ParamID>(id), static_cast<Vst::ParamValue>(val));
+				if (!streamer.readInt32(id))   continue;
+				if (!streamer.readFloat(val))  continue;
+				setParamNormalized(static_cast<Vst::ParamID>(id),
+					static_cast<Vst::ParamValue>(val));
 			}
-			return kResultOk;
 		}
 		else
 		{
-			// Legacy: treat firstInt as savedBypass
-			int32 savedBypass = firstInt;
-			bypass = (savedBypass != 0);
+			// Legacy format: firstInt is bypass value
+			bypass = (firstInt != 0);
 			setParamNormalized(kBypassId, bypass ? 1.0 : 0.0);
-			return kResultOk;
 		}
+
+		return kResultOk;
 	}
 
+	//------------------------------------------------------------------------
 	tresult PLUGIN_API LA2A_CompressorController::setParamNormalized(
 		Steinberg::Vst::ParamID tag,
 		Steinberg::Vst::ParamValue value)
 	{
 		if (tag == kBypassId)
-		{
-			// maintain local copy for quick access
 			bypass = (value >= 0.5);
-
-			// Let the base class actually set the parameter value/store it and notify listeners.
-			return EditControllerEx1::setParamNormalized(tag, value);
-		}
 
 		return EditControllerEx1::setParamNormalized(tag, value);
 	}
 
-	tresult PLUGIN_API LA2A_CompressorController::getParamStringByValue(Vst::ParamID tag,
+	//------------------------------------------------------------------------
+	tresult PLUGIN_API LA2A_CompressorController::getParamStringByValue(
+		Vst::ParamID tag,
 		Vst::ParamValue valueNormalized,
 		Vst::String128 string)
 	{
@@ -321,105 +246,88 @@ namespace MyCompanyName {
 
 		switch (tag)
 		{
-			case kBypassId:
-				snprintf(buf, sizeof(buf), "%s", (valueNormalized >= 0.5) ? "On" : "Off");
-				break;
-			
-			case kInputGainId:
-			{
-				int pct = static_cast<int>(std::round(valueNormalized * 100.0));
-				snprintf(buf, sizeof(buf), "%d%%", pct);
-				break;
-			}
-			// This is the meter, gonna take some work
-			case kReductionId:
-			{
-				// Tone 0-20% Darker, 21-40% Dark, 41-60% Neutral, 61-80% Bright, 81-100% Brighter
-				int pct = static_cast<int>(std::round(valueNormalized * 100.0));
-				int idx = 0;
-				const char* labels[3] = {"Output +10", "Gain Reduction", "Output +4"};
-				if (pct <= 33)
-					idx = 0;
-				else if (pct <= 67)
-					idx = 1;
-				else
-					idx = 2;
-				snprintf(buf, sizeof(buf), "%s", labels[idx]);
-				break;
-			}
-			case kOutputGainId:
-			{
-				int pct = static_cast<int>(std::round(valueNormalized * 100.0));
-				snprintf(buf, sizeof(buf), "%d%%", pct);
-				break;
-			}
+		case kBypassId:
+			snprintf(buf, sizeof(buf), "%s", (valueNormalized >= 0.5) ? "On" : "Off");
+			break;
 
-			case kMixId:
-			{
-				int pct = static_cast<int>(std::round(valueNormalized * 100.0));
-				snprintf(buf, sizeof(buf), "%d%%", pct);
-				break;
-			}
-
-			case kToneId:
-			{
-				// Tone 0-20% Darker, 21-40% Dark, 41-60% Neutral, 61-80% Bright, 81-100% Brighter
-				int pct = static_cast<int>(std::round(valueNormalized * 100.0));
-				int idx = 0;
-				const char* labels[3] = {"Dark", "Neutral", "Bright"};
-				if (pct <= 33)
-					idx = 0;
-				else if (pct <= 67)
-					idx = 1;
-				else
-					idx = 2;
-				snprintf(buf, sizeof(buf), "%s", labels[idx]);
-				break;
-			}
-			case kHighPassId:
-			{
-				int hz = 20.0f + static_cast<float>(valueNormalized) * (200.0f - 20.0f);
-				snprintf(buf, sizeof(buf), "%d%%", hz);
-				break;
-			}
-			case kVUId:
-			{
-				// Not actual text, need to find how to select frames based on this code
-				// VU Meter: 0-20% Green, 21-40% Yellow, 41-60% Orange, 61-80% Red, 81-100% Clipping
-				int pct = static_cast<int>(std::round(valueNormalized * 100.0));
-				int idx = 0;
-				const char* labels[5] = { "Green", "Yellow", "Orange", "Red", "Clipping" };
-				if (pct <= 20)
-					idx = 0;
-				else if (pct <= 40)
-					idx = 1;
-				else if (pct <= 60)
-					idx = 2;
-				else if (pct <= 80)
-					idx = 3;
-				else
-					idx = 4;
-				snprintf(buf, sizeof(buf), "%s", labels[idx]);
-				break;
-			}
-			case kCompressionTypeId:
-				snprintf(buf, sizeof(buf), "%s", (valueNormalized >= 0.5) ? "Compress" : "Limit");
-				break;
-
-			default:
-				// fall back to base class formatting (numbers, etc.)
-				return EditControllerEx1::getParamStringByValue(tag, valueNormalized, string);
-			
-
-
-			// Use UString128 to convert ASCII/UTF-8 into SDK TChar buffer safely
-			Steinberg::UString128 ustr;
-			ustr.fromAscii(buf);
-			ustr.copyTo(string, 128);
-
-			return kResultTrue;
+		case kInputGainId:
+		{
+			// Map normalized 0–1 to dB: 0.25 = 0 dB, range ±18 dB
+			float dB = (static_cast<float>(valueNormalized) - 0.25f) * 72.0f;
+			snprintf(buf, sizeof(buf), "%.1f dB", dB);
+			break;
 		}
 
-		//------------------------------------------------------------------------
-	} // namespace MyCompanyName
-}
+		case kReductionId:
+		{
+			// Three-position: 0–0.25 = 0dB, 0.25–0.75 = +4dB, 0.75–1.0 = +10dB
+			float v = static_cast<float>(valueNormalized);
+			if (v < 0.25f)
+				snprintf(buf, sizeof(buf), "0 dB");
+			else if (v < 0.75f)
+				snprintf(buf, sizeof(buf), "+4 dB");
+			else
+				snprintf(buf, sizeof(buf), "+10 dB");
+			break;
+		}
+
+		case kOutputGainId:
+		{
+			float dB = (static_cast<float>(valueNormalized) - 0.25f) * 72.0f;
+			snprintf(buf, sizeof(buf), "%.1f dB", dB);
+			break;
+		}
+
+		case kMixId:
+		{
+			int pct = static_cast<int>(std::round(valueNormalized * 100.0));
+			snprintf(buf, sizeof(buf), "%d%%", pct);
+			break;
+		}
+
+		case kToneId:
+		{
+			// Match the three zones used by the biquad EQ
+			float v = static_cast<float>(valueNormalized);
+			if (v < 0.49f)
+				snprintf(buf, sizeof(buf), "Dark");
+			else if (v <= 0.51f)
+				snprintf(buf, sizeof(buf), "Neutral");
+			else
+				snprintf(buf, sizeof(buf), "Bright");
+			break;
+		}
+
+		case kHighPassId:
+		{
+			// Map 0–1 → 20–200 Hz (matches processor)
+			float hz = 20.0f + static_cast<float>(valueNormalized) * (200.0f - 20.0f);
+			snprintf(buf, sizeof(buf), "%.0f Hz", hz);
+			break;
+		}
+
+		case kVUId:
+		{
+			// Display gain reduction level in dB (0–1 normalized = 0–20 dB GR)
+			float grDB = static_cast<float>(valueNormalized) * 20.0f;
+			snprintf(buf, sizeof(buf), "%.1f dB", grDB);
+			break;
+		}
+
+		case kCompressionTypeId:
+			snprintf(buf, sizeof(buf), "%s", (valueNormalized >= 0.5) ? "Compress" : "Limit");
+			break;
+
+		default:
+			return EditControllerEx1::getParamStringByValue(tag, valueNormalized, string);
+		}
+
+		// Convert ASCII into the SDK's TChar (UTF-16) output buffer
+		Steinberg::UString128 ustr;
+		ustr.fromAscii(buf);
+		ustr.copyTo(string, 128);
+
+		return kResultTrue;
+	}
+
+} // namespace MyCompanyName
